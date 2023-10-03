@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -151,7 +151,364 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: "animaatio_etsku_sy\xF6_mansikan_0"
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 1323
+        width: 491
+        height: 396
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94212a289cedcb346ad0b0dc035d389a
+      internalID: 2083009362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animaatio_etsku_sy\xF6_mansikan_1"
+      rect:
+        serializedVersion: 2
+        x: 914
+        y: 1323
+        width: 484
+        height: 406
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78a07bcc955b8c94dbb694db535eec20
+      internalID: 175370702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animaatio_etsku_sy\xF6_mansikan_2"
+      rect:
+        serializedVersion: 2
+        x: 1687
+        y: 1323
+        width: 486
+        height: 401
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50d6560f6896fe248a121c381cddf83a
+      internalID: 1836401238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animaatio_etsku_sy\xF6_mansikan_3"
+      rect:
+        serializedVersion: 2
+        x: 2461
+        y: 1323
+        width: 486
+        height: 396
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05f0a2fdbf4b1d94b9ca664e0fc44bf2
+      internalID: -1217484396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animaatio_etsku_sy\xF6_mansikan_4"
+      rect:
+        serializedVersion: 2
+        x: 3233
+        y: 1323
+        width: 491
+        height: 394
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d71d6fee2a0d6224c8509ceeeb95ed3e
+      internalID: 1424545193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animaatio_etsku_sy\xF6_mansikan_5"
+      rect:
+        serializedVersion: 2
+        x: 4006
+        y: 1323
+        width: 495
+        height: 396
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ff31c4f72bae994a917878ca72a8892
+      internalID: 1250442004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animaatio_etsku_sy\xF6_mansikan_6"
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 1207
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f60035ff09b7af4eafa1a8426934b89
+      internalID: 395900079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animaatio_etsku_sy\xF6_mansikan_7"
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 717
+        width: 495
+        height: 396
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a12bf9e4b809ba4d81c4eb87d3bc5f9
+      internalID: -1857075874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animaatio_etsku_sy\xF6_mansikan_8"
+      rect:
+        serializedVersion: 2
+        x: 914
+        y: 717
+        width: 496
+        height: 396
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a97a946c55f79294f8049dfa0aa91c02
+      internalID: -920866460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animaatio_etsku_sy\xF6_mansikan_9"
+      rect:
+        serializedVersion: 2
+        x: 1687
+        y: 717
+        width: 496
+        height: 396
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e3e84c86784267448d29d8e5602e318
+      internalID: -264731811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animaatio_etsku_sy\xF6_mansikan_10"
+      rect:
+        serializedVersion: 2
+        x: 2461
+        y: 717
+        width: 495
+        height: 396
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 766e7a5d57c31bd47a48c9215b37171b
+      internalID: -1536184408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animaatio_etsku_sy\xF6_mansikan_11"
+      rect:
+        serializedVersion: 2
+        x: 3233
+        y: 717
+        width: 495
+        height: 396
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 651c6dff702812e4f9281884a4e753bb
+      internalID: -1462609768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animaatio_etsku_sy\xF6_mansikan_12"
+      rect:
+        serializedVersion: 2
+        x: 4006
+        y: 717
+        width: 490
+        height: 396
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbf37f173a9c2154cbaa1ef34b36c8db
+      internalID: -1025756185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animaatio_etsku_sy\xF6_mansikan_13"
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 112
+        width: 486
+        height: 394
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a63c5c0fd4e37774fb9667087b9fab1e
+      internalID: 1623369499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animaatio_etsku_sy\xF6_mansikan_14"
+      rect:
+        serializedVersion: 2
+        x: 914
+        y: 112
+        width: 484
+        height: 401
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2992625c1b875b4c87e70fc2542ec33
+      internalID: 2037683489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animaatio_etsku_sy\xF6_mansikan_15"
+      rect:
+        serializedVersion: 2
+        x: 1687
+        y: 112
+        width: 484
+        height: 405
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ddb149496e97854e9454d9bc3a0fb91
+      internalID: 178917083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animaatio_etsku_sy\xF6_mansikan_16"
+      rect:
+        serializedVersion: 2
+        x: 2461
+        y: 112
+        width: 491
+        height: 394
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ae21a888077596499f37bc14b865b67
+      internalID: -1946114967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -162,7 +519,24 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "animaatio_etsku_sy\xF6_mansikan_0": 2083009362
+      "animaatio_etsku_sy\xF6_mansikan_1": 175370702
+      "animaatio_etsku_sy\xF6_mansikan_10": -1536184408
+      "animaatio_etsku_sy\xF6_mansikan_11": -1462609768
+      "animaatio_etsku_sy\xF6_mansikan_12": -1025756185
+      "animaatio_etsku_sy\xF6_mansikan_13": 1623369499
+      "animaatio_etsku_sy\xF6_mansikan_14": 2037683489
+      "animaatio_etsku_sy\xF6_mansikan_15": 178917083
+      "animaatio_etsku_sy\xF6_mansikan_16": -1946114967
+      "animaatio_etsku_sy\xF6_mansikan_2": 1836401238
+      "animaatio_etsku_sy\xF6_mansikan_3": -1217484396
+      "animaatio_etsku_sy\xF6_mansikan_4": 1424545193
+      "animaatio_etsku_sy\xF6_mansikan_5": 1250442004
+      "animaatio_etsku_sy\xF6_mansikan_6": 395900079
+      "animaatio_etsku_sy\xF6_mansikan_7": -1857075874
+      "animaatio_etsku_sy\xF6_mansikan_8": -920866460
+      "animaatio_etsku_sy\xF6_mansikan_9": -264731811
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
