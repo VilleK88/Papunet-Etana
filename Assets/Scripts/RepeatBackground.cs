@@ -11,8 +11,8 @@ public class RepeatBackground : MonoBehaviour
     private void Start()
     {
         startPos = transform.position;
-        //repeatWidth = GetComponent<BoxCollider2D>().size.x / 2;
-        repeatWidth = GetComponent<SpriteRenderer>().size.x / 2;
+        repeatWidth = GetComponent<BoxCollider2D>().size.x / 2;
+        //repeatWidth = GetComponent<SpriteRenderer>().size.x / 2;
     }
 
     private void Update()
