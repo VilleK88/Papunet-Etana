@@ -42,12 +42,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 120
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -68,9 +68,9 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -151,7 +151,448 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: "animaatio_etsku_liikkuueteenp\xE4in_energiataso_alin_4_0"
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 719
+        width: 490
+        height: 393
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0368cd2805559c47a4ca3f8f467de8b
+      internalID: -1960836856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animaatio_etsku_liikkuueteenp\xE4in_energiataso_alin_4_1"
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 716
+        width: 491
+        height: 396
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3da5ec6bd1a8c548a65e19c942c0982
+      internalID: -685434491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animaatio_etsku_liikkuueteenp\xE4in_energiataso_alin_4_2"
+      rect:
+        serializedVersion: 2
+        x: 1689
+        y: 716
+        width: 491
+        height: 396
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfcf5690696a71947a6381939c01c495
+      internalID: -877131875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animaatio_etsku_liikkuueteenp\xE4in_energiataso_alin_4_3"
+      rect:
+        serializedVersion: 2
+        x: 2455
+        y: 716
+        width: 506
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e298f01742666240934b98832bb6855
+      internalID: -2144715095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animaatio_etsku_liikkuueteenp\xE4in_energiataso_alin_4_4"
+      rect:
+        serializedVersion: 2
+        x: 3225
+        y: 712
+        width: 517
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cea3150acaad144fb8d2acec9962f7d
+      internalID: 527738329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animaatio_etsku_liikkuueteenp\xE4in_energiataso_alin_4_5"
+      rect:
+        serializedVersion: 2
+        x: 3995
+        y: 704
+        width: 529
+        height: 408
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbd94a9418e0933449a45002c4383319
+      internalID: -1768928683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animaatio_etsku_liikkuueteenp\xE4in_energiataso_alin_4_6"
+      rect:
+        serializedVersion: 2
+        x: 4761
+        y: 700
+        width: 544
+        height: 416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d67e3ae5d23f4244ca31224185568735
+      internalID: 2114982464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animaatio_etsku_liikkuueteenp\xE4in_energiataso_alin_4_7"
+      rect:
+        serializedVersion: 2
+        x: 5531
+        y: 697
+        width: 551
+        height: 411
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2cd97e25be21a348a4b56679993eaf5
+      internalID: -1432185568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animaatio_etsku_liikkuueteenp\xE4in_energiataso_alin_4_8"
+      rect:
+        serializedVersion: 2
+        x: 6226
+        y: 1052
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f56f1d6a3e1c85f4489514a3c391dac3
+      internalID: -2040741416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animaatio_etsku_liikkuueteenp\xE4in_energiataso_alin_4_9"
+      rect:
+        serializedVersion: 2
+        x: 6305
+        y: 697
+        width: 551
+        height: 411
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4eb135ad8104b043a75424b0f0c6cc7
+      internalID: -1432229957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animaatio_etsku_liikkuueteenp\xE4in_energiataso_alin_4_10"
+      rect:
+        serializedVersion: 2
+        x: 7079
+        y: 693
+        width: 551
+        height: 411
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b79b3f8d85065f44da01ac39ff61bb36
+      internalID: 1853405025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animaatio_etsku_liikkuueteenp\xE4in_energiataso_alin_4_11"
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 85
+        width: 554
+        height: 415
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efdf4010809da2a4da11893568151051
+      internalID: -1385144455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animaatio_etsku_liikkuueteenp\xE4in_energiataso_alin_4_12"
+      rect:
+        serializedVersion: 2
+        x: 893
+        y: 93
+        width: 551
+        height: 411
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c23b3ad64ca051c48bcb79efe5dce02e
+      internalID: 1060279294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animaatio_etsku_liikkuueteenp\xE4in_energiataso_alin_4_13"
+      rect:
+        serializedVersion: 2
+        x: 1666
+        y: 93
+        width: 551
+        height: 411
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e36dfbc492a190b4cb9803eb8ea5a672
+      internalID: 1479597979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animaatio_etsku_liikkuueteenp\xE4in_energiataso_alin_4_14"
+      rect:
+        serializedVersion: 2
+        x: 2440
+        y: 93
+        width: 547
+        height: 415
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb332e2f95c5ce747823177067ce92a9
+      internalID: -1654340521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animaatio_etsku_liikkuueteenp\xE4in_energiataso_alin_4_15"
+      rect:
+        serializedVersion: 2
+        x: 3221
+        y: 100
+        width: 529
+        height: 404
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e25909af449e5c94fa56ce55b66850a5
+      internalID: 914178666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animaatio_etsku_liikkuueteenp\xE4in_energiataso_alin_4_16"
+      rect:
+        serializedVersion: 2
+        x: 3999
+        y: 104
+        width: 517
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce1cec84de53a47468dc00a7f55d4980
+      internalID: 1953494720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animaatio_etsku_liikkuueteenp\xE4in_energiataso_alin_4_17"
+      rect:
+        serializedVersion: 2
+        x: 4775
+        y: 108
+        width: 503
+        height: 396
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a16aeb90636ad5d4ab2f8206411b4838
+      internalID: 139494338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animaatio_etsku_liikkuueteenp\xE4in_energiataso_alin_4_18"
+      rect:
+        serializedVersion: 2
+        x: 5554
+        y: 111
+        width: 491
+        height: 393
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc82d31feb68ed34a9ef9aecbd949d1c
+      internalID: -194453252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animaatio_etsku_liikkuueteenp\xE4in_energiataso_alin_4_19"
+      rect:
+        serializedVersion: 2
+        x: 6324
+        y: 111
+        width: 494
+        height: 397
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a280487d96e5a64f88ea7f150b1c90b
+      internalID: 694265219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animaatio_etsku_liikkuueteenp\xE4in_energiataso_alin_4_20"
+      rect:
+        serializedVersion: 2
+        x: 7098
+        y: 111
+        width: 490
+        height: 397
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07d00d53068f2b048af0bd67e522c40e
+      internalID: 1229955974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -162,7 +603,28 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "animaatio_etsku_liikkuueteenp\xE4in_energiataso_alin_4_0": -1960836856
+      "animaatio_etsku_liikkuueteenp\xE4in_energiataso_alin_4_1": -685434491
+      "animaatio_etsku_liikkuueteenp\xE4in_energiataso_alin_4_10": 1853405025
+      "animaatio_etsku_liikkuueteenp\xE4in_energiataso_alin_4_11": -1385144455
+      "animaatio_etsku_liikkuueteenp\xE4in_energiataso_alin_4_12": 1060279294
+      "animaatio_etsku_liikkuueteenp\xE4in_energiataso_alin_4_13": 1479597979
+      "animaatio_etsku_liikkuueteenp\xE4in_energiataso_alin_4_14": -1654340521
+      "animaatio_etsku_liikkuueteenp\xE4in_energiataso_alin_4_15": 914178666
+      "animaatio_etsku_liikkuueteenp\xE4in_energiataso_alin_4_16": 1953494720
+      "animaatio_etsku_liikkuueteenp\xE4in_energiataso_alin_4_17": 139494338
+      "animaatio_etsku_liikkuueteenp\xE4in_energiataso_alin_4_18": -194453252
+      "animaatio_etsku_liikkuueteenp\xE4in_energiataso_alin_4_19": 694265219
+      "animaatio_etsku_liikkuueteenp\xE4in_energiataso_alin_4_2": -877131875
+      "animaatio_etsku_liikkuueteenp\xE4in_energiataso_alin_4_20": 1229955974
+      "animaatio_etsku_liikkuueteenp\xE4in_energiataso_alin_4_3": -2144715095
+      "animaatio_etsku_liikkuueteenp\xE4in_energiataso_alin_4_4": 527738329
+      "animaatio_etsku_liikkuueteenp\xE4in_energiataso_alin_4_5": -1768928683
+      "animaatio_etsku_liikkuueteenp\xE4in_energiataso_alin_4_6": 2114982464
+      "animaatio_etsku_liikkuueteenp\xE4in_energiataso_alin_4_7": -1432185568
+      "animaatio_etsku_liikkuueteenp\xE4in_energiataso_alin_4_8": -2040741416
+      "animaatio_etsku_liikkuueteenp\xE4in_energiataso_alin_4_9": -1432229957
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
