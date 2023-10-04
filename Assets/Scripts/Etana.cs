@@ -106,6 +106,7 @@ public class Etana : MonoBehaviour
         {
             if (collision.gameObject.CompareTag("Rock"))
             {
+                anim.SetTrigger("Kivi");
                 TakeDamage(20);
                 Debug.Log("Rock hits!");
                 scoreManager.scoreCount -= 5;
@@ -126,13 +127,14 @@ public class Etana : MonoBehaviour
     public IEnumerator Invulnerability()
     {
         Physics2D.IgnoreLayerCollision(6, 7, true);
-        for (int i = 0; i < numberOfFlashes; i++)
+        /*for (int i = 0; i < numberOfFlashes; i++)
         {
             sprite.color = new Color(1, 0, 0, 0.5f);
             yield return new WaitForSeconds(iFramesDuration / (numberOfFlashes * 2));
             sprite.color = originalColor;
             yield return new WaitForSeconds(iFramesDuration / (numberOfFlashes * 2));
-        }
+        }*/
+        yield return new WaitForSeconds(2);
         Physics2D.IgnoreLayerCollision(6, 7, false);
     }
 
