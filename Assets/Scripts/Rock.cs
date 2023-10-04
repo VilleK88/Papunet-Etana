@@ -7,7 +7,7 @@ public class Rock : MonoBehaviour
 {
     Rigidbody2D rb2d;
     float rollSpeed = 3;
-    float jumpForce = 4.6f;
+    float jumpForce = 4.7f; // original jump force 4.6f
 
     private void Start()
     {
@@ -29,7 +29,7 @@ public class Rock : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             rb2d.velocity = new Vector2(-rollSpeed, rb2d.velocity.y);
-            rb2d.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+            rb2d.AddForce(new Vector2(0, jumpForce + 5), ForceMode2D.Impulse);
         }
     }
 
