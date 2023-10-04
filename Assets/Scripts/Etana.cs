@@ -62,9 +62,27 @@ public class Etana : MonoBehaviour
         {
             boxCollider.enabled = true;
             shieldCounter = 0;
+
+            if(currentEnergy > 74)
+            {
+                StartCoroutine(SetEnergyLevelTo1());
+            }
+            else
+            {
+                anim.SetBool("Taso1", false);
+            }
+
+            if(currentEnergy < 75 && currentEnergy > 49)
+            {
+                StartCoroutine(SetEnergyLevelTo2());
+            }
+            else
+            {
+                anim.SetBool("Taso2", false);
+            }
         }
 
-        if (!ifHiding && currentEnergy > 74)
+        /*if (!ifHiding && currentEnergy > 74)
         {
             //anim.SetBool("Taso1", true);
             StartCoroutine(SetEnergyLevelTo1());
@@ -72,7 +90,7 @@ public class Etana : MonoBehaviour
         else if(ifHiding && currentEnergy > 74)
         {
             anim.SetBool("Taso1", false);
-        }
+        }*/
 
         energyBar.SetEnergy(currentEnergy);
     }
@@ -127,13 +145,6 @@ public class Etana : MonoBehaviour
     public IEnumerator Invulnerability()
     {
         Physics2D.IgnoreLayerCollision(6, 7, true);
-        /*for (int i = 0; i < numberOfFlashes; i++)
-        {
-            sprite.color = new Color(1, 0, 0, 0.5f);
-            yield return new WaitForSeconds(iFramesDuration / (numberOfFlashes * 2));
-            sprite.color = originalColor;
-            yield return new WaitForSeconds(iFramesDuration / (numberOfFlashes * 2));
-        }*/
         yield return new WaitForSeconds(2);
         Physics2D.IgnoreLayerCollision(6, 7, false);
     }
@@ -142,5 +153,11 @@ public class Etana : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         anim.SetBool("Taso1", true);
+    }
+
+    IEnumerator SetEnergyLevelTo2()
+    {
+        yield return new WaitForSeconds(0.5f);
+        anim.SetBool("Taso2", true);
     }
 }
