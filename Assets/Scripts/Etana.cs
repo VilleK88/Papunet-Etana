@@ -14,7 +14,7 @@ public class Etana : MonoBehaviour
     [SerializeField] float startingEnergy = 100;
     public float currentEnergy;
     public EnergyBar energyBar;
-    bool ifHiding; // fetch from cursorController -script
+    public bool ifHiding; // fetch from cursorController -script
     public GameObject cursorController;
     public float energyLossPerSecond = 1;
     float shieldCounterMaxTime = 2;
@@ -56,6 +56,16 @@ public class Etana : MonoBehaviour
         else
         {
             shieldCounter = 0;
+        }
+
+        if (!ifHiding && currentEnergy > 74)
+        {
+            //anim.SetBool("Taso1", true);
+            StartCoroutine(SetEnergyLevelTo1());
+        }
+        else if(ifHiding && currentEnergy > 74)
+        {
+            anim.SetBool("Taso1", false);
         }
 
         energyBar.SetEnergy(currentEnergy);
@@ -118,5 +128,11 @@ public class Etana : MonoBehaviour
             yield return new WaitForSeconds(iFramesDuration / (numberOfFlashes * 2));
         }
         Physics2D.IgnoreLayerCollision(6, 7, false);
+    }
+
+    IEnumerator SetEnergyLevelTo1()
+    {
+        yield return new WaitForSeconds(0.5f);
+        anim.SetBool("Taso1", true);
     }
 }

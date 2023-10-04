@@ -62,14 +62,14 @@ public class CursorController : MonoBehaviour
             {
                 if(Input.GetMouseButtonDown(0) && hideHead == false)
                 {
-                    snailAnimations.GetComponent<Animator>().SetBool("HideHead", true);
+                    //snailAnimations.GetComponent<Animator>().SetBool("HideHead", true);
                     etana.GetComponent<Animator>().SetTrigger("HideHead");
                     hideHead = true;
 
                 }
                 else if(Input.GetMouseButtonDown(0) && hideHead)
                 {
-                    snailAnimations.GetComponent<Animator>().SetBool("HideHead", false);
+                    //snailAnimations.GetComponent<Animator>().SetBool("HideHead", false);
                     etana.GetComponent<Animator>().SetTrigger("StopHiding");
                     //etana.GetComponent<Animator>().SetBool("HideHead", false);
                     hideHead = false;
