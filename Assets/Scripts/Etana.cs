@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
@@ -7,6 +8,7 @@ public class Etana : MonoBehaviour
 {
     Rigidbody2D rb2d;
     CircleCollider2D circleCollider;
+    BoxCollider2D boxCollider;
     Animator anim;
 
     public ScoreManager scoreManager;
@@ -30,6 +32,7 @@ public class Etana : MonoBehaviour
     {
         rb2d = GetComponent<Rigidbody2D>();
         circleCollider = GetComponent<CircleCollider2D>();
+        boxCollider = GetComponent<BoxCollider2D>();
         anim = GetComponent<Animator>();
 
         currentEnergy = startingEnergy;
@@ -44,6 +47,8 @@ public class Etana : MonoBehaviour
 
         if (ifHiding)
         {
+            boxCollider.enabled = false;
+
             if (shieldCounterMaxTime > shieldCounter)
             {
                 shieldCounter += Time.deltaTime;
@@ -55,6 +60,7 @@ public class Etana : MonoBehaviour
         }
         else
         {
+            boxCollider.enabled = true;
             shieldCounter = 0;
         }
 
@@ -102,17 +108,17 @@ public class Etana : MonoBehaviour
             {
                 TakeDamage(20);
                 Debug.Log("Rock hits!");
-                //ScoreManager.scoreValue -= 5;
                 scoreManager.scoreCount -= 5;
                 StartCoroutine(Invulnerability());
             }
 
             if (collision.gameObject.CompareTag("Strawberry"))
             {
+                anim.SetTrigger("Mansikka");
                 AddHealth(5);
-                //ScoreManager.scoreValue += 5;
                 scoreManager.scoreCount += 5;
                 Debug.Log("Strawberry hits!");
+                Destroy(collision.gameObject);
             }
         }
     }

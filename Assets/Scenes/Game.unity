@@ -811,6 +811,7 @@ GameObject:
   - component: {fileID: 1081073522}
   - component: {fileID: 1081073521}
   - component: {fileID: 1081073520}
+  - component: {fileID: 1081073523}
   m_Layer: 6
   m_Name: Etana
   m_TagString: Player
@@ -965,6 +966,32 @@ MonoBehaviour:
   shieldCounter: 0
   iFramesDuration: 2
   numberOfFlashes: 2
+--- !u!61 &1081073523
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1081073516}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 1.5288743, y: 0.12206115}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4.0916667, y: 3.3009305}
+    newSize: {x: 4.91, y: 3.9611166}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.6677754, y: 0.918972}
+  m_EdgeRadius: 0
 --- !u!1 &1220441559
 GameObject:
   m_ObjectHideFlags: 0

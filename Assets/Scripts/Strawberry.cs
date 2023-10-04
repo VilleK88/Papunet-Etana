@@ -6,7 +6,7 @@ public class Strawberry : MonoBehaviour
 {
     Rigidbody2D rb2d;
     float rollSpeed = 3;
-    float jumpForce = 5;
+    float jumpForce = 4.5f; // original jump force 5
 
     private void Start()
     {
