@@ -80,6 +80,24 @@ public class Etana : MonoBehaviour
             {
                 anim.SetBool("Taso2", false);
             }
+
+            if(currentEnergy < 50 && currentEnergy > 24)
+            {
+                StartCoroutine(SetEnergyLevelTo3());
+            }
+            else
+            {
+                anim.SetBool("Taso3", false);
+            }
+
+            if(currentEnergy < 25)
+            {
+                StartCoroutine(SetEnergyLevelTo4());
+            }
+            else
+            {
+                anim.SetBool("Taso4", false);
+            }
         }
 
         /*if (!ifHiding && currentEnergy > 74)
@@ -159,5 +177,17 @@ public class Etana : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         anim.SetBool("Taso2", true);
+    }
+
+    IEnumerator SetEnergyLevelTo3()
+    {
+        yield return new WaitForSeconds(0.5f);
+        anim.SetBool("Taso3", true);
+    }
+
+    IEnumerator SetEnergyLevelTo4()
+    {
+        yield return new WaitForSeconds(0.5f);
+        anim.SetBool("Taso4", true);
     }
 }
