@@ -29,7 +29,7 @@ public class Rock : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             rb2d.velocity = new Vector2(-rollSpeed, rb2d.velocity.y);
-            rb2d.AddForce(new Vector2(0, jumpForce + 5), ForceMode2D.Impulse);
+            rb2d.AddForce(new Vector2(0, jumpForce + 6), ForceMode2D.Impulse);
         }
     }
 
