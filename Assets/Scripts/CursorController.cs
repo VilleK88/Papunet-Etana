@@ -11,7 +11,6 @@ public class CursorController : MonoBehaviour
 
     Camera mainCamera;
 
-    [SerializeField] GameObject snailAnimations;
     [SerializeField] GameObject etana;
 
     public bool hideHead = false;
@@ -62,16 +61,13 @@ public class CursorController : MonoBehaviour
             {
                 if(Input.GetMouseButtonDown(0) && hideHead == false)
                 {
-                    //snailAnimations.GetComponent<Animator>().SetBool("HideHead", true);
                     etana.GetComponent<Animator>().SetTrigger("HideHead");
                     hideHead = true;
 
                 }
                 else if(Input.GetMouseButtonDown(0) && hideHead)
                 {
-                    //snailAnimations.GetComponent<Animator>().SetBool("HideHead", false);
                     etana.GetComponent<Animator>().SetTrigger("StopHiding");
-                    //etana.GetComponent<Animator>().SetBool("HideHead", false);
                     hideHead = false;
                 }
             }
