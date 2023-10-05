@@ -26,6 +26,9 @@ public class Etana : MonoBehaviour
     SpriteRenderer rockHitsShellSprite;
     Animator rockHitsShellAnim;
 
+    [SerializeField] Transform snailHead;
+    CircleCollider2D snailHeadCollider;
+
     private void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
@@ -38,6 +41,9 @@ public class Etana : MonoBehaviour
 
         rockHitsShellSprite = rockHitsShell.GetComponent<SpriteRenderer>();
         rockHitsShellAnim = rockHitsShell.GetComponent<Animator>();
+
+        snailHeadCollider = snailHead.GetComponent<CircleCollider2D>();
+        snailHeadCollider.enabled = true;
     }
 
     private void Update()
@@ -46,7 +52,8 @@ public class Etana : MonoBehaviour
 
         if (ifHiding)
         {
-            boxCollider.enabled = false;
+            snailHeadCollider.enabled = false;
+            //boxCollider.enabled = false;
 
             if (shieldCounterMaxTime > shieldCounter)
             {
@@ -59,7 +66,8 @@ public class Etana : MonoBehaviour
         }
         else
         {
-            boxCollider.enabled = true;
+            snailHeadCollider.enabled = true;
+            //boxCollider.enabled = true;
             shieldCounter = 0;
 
             if(currentEnergy > 74)
@@ -139,10 +147,14 @@ public class Etana : MonoBehaviour
 
             if (collision.gameObject.CompareTag("Strawberry"))
             {
-                anim.SetTrigger("Mansikka");
-                AddHealth(5);
-                scoreManager.scoreCount += 5;
-                Destroy(collision.gameObject);
+                if(collision.contacts.Length > 0 && collision.contacts[0].otherCollider.transform.
+                    IsChildOf(snailHead))
+                {
+                    anim.SetTrigger("Mansikka");
+                    AddHealth(5);
+                    scoreManager.scoreCount += 5;
+                    Destroy(collision.gameObject);
+                }
             }
         }
         else

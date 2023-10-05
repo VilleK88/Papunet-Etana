@@ -1083,6 +1083,7 @@ MonoBehaviour:
   energyLossPerSecond: 1
   shieldCounter: 0
   rockHitsShell: {fileID: 823672679}
+  snailHead: {fileID: 2033782740}
 --- !u!61 &1081073523
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1100,7 +1101,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.0583334, y: 3.25}
+    oldSize: {x: 4.0916667, y: 3.3}
     newSize: {x: 4.91, y: 3.9611166}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
