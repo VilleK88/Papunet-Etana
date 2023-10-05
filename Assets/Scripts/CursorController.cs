@@ -71,7 +71,6 @@ public class CursorController : MonoBehaviour
                     hideHead = false;
                 }
             }
-            Debug.Log("Hit 2D collider: " + hits2D.collider.tag);
         }
     }
 

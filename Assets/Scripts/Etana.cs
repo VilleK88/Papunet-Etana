@@ -22,12 +22,6 @@ public class Etana : MonoBehaviour
     float shieldCounterMaxTime = 1;
     public float shieldCounter = 0;
 
-    [Header("iFrames")]
-    [SerializeField] private float iFramesDuration;
-    [SerializeField] private int numberOfFlashes;
-    private SpriteRenderer sprite;
-    Color originalColor;
-
     [SerializeField] GameObject rockHitsShell;
     SpriteRenderer rockHitsShellSprite;
     Animator rockHitsShellAnim;
@@ -41,8 +35,6 @@ public class Etana : MonoBehaviour
 
         currentEnergy = startingEnergy;
         energyBar.SetStartingEnergy(startingEnergy);
-        sprite = GetComponent<SpriteRenderer>();
-        originalColor = sprite.color;
 
         rockHitsShellSprite = rockHitsShell.GetComponent<SpriteRenderer>();
         rockHitsShellAnim = rockHitsShell.GetComponent<Animator>();
@@ -72,7 +64,7 @@ public class Etana : MonoBehaviour
 
             if(currentEnergy > 74)
             {
-                StartCoroutine(SetEnergyLevelTo1());
+                anim.SetBool("Taso1", true);
             }
             else
             {
@@ -81,7 +73,7 @@ public class Etana : MonoBehaviour
 
             if(currentEnergy < 75 && currentEnergy > 49)
             {
-                StartCoroutine(SetEnergyLevelTo2());
+                anim.SetBool("Taso2", true);
             }
             else
             {
@@ -90,7 +82,7 @@ public class Etana : MonoBehaviour
 
             if(currentEnergy < 50 && currentEnergy > 24)
             {
-                StartCoroutine(SetEnergyLevelTo3());
+                anim.SetBool("Taso3", true);
             }
             else
             {
@@ -99,23 +91,13 @@ public class Etana : MonoBehaviour
 
             if(currentEnergy < 25)
             {
-                StartCoroutine(SetEnergyLevelTo4());
+                anim.SetBool("Taso4", true);
             }
             else
             {
                 anim.SetBool("Taso4", false);
             }
         }
-
-        /*if (!ifHiding && currentEnergy > 74)
-        {
-            //anim.SetBool("Taso1", true);
-            StartCoroutine(SetEnergyLevelTo1());
-        }
-        else if(ifHiding && currentEnergy > 74)
-        {
-            anim.SetBool("Taso1", false);
-        }*/
 
         energyBar.SetEnergy(currentEnergy);
     }
@@ -151,7 +133,6 @@ public class Etana : MonoBehaviour
             {
                 anim.SetTrigger("Kivi");
                 TakeDamage(20);
-                Debug.Log("Rock hits!");
                 scoreManager.scoreCount -= 5;
                 StartCoroutine(Invulnerability());
             }
@@ -161,7 +142,6 @@ public class Etana : MonoBehaviour
                 anim.SetTrigger("Mansikka");
                 AddHealth(5);
                 scoreManager.scoreCount += 5;
-                Debug.Log("Strawberry hits!");
                 Destroy(collision.gameObject);
             }
         }
@@ -181,30 +161,6 @@ public class Etana : MonoBehaviour
         Physics2D.IgnoreLayerCollision(6, 7, true);
         yield return new WaitForSeconds(2);
         Physics2D.IgnoreLayerCollision(6, 7, false);
-    }
-
-    IEnumerator SetEnergyLevelTo1()
-    {
-        yield return new WaitForSeconds(0.5f);
-        anim.SetBool("Taso1", true);
-    }
-
-    IEnumerator SetEnergyLevelTo2()
-    {
-        yield return new WaitForSeconds(0.5f);
-        anim.SetBool("Taso2", true);
-    }
-
-    IEnumerator SetEnergyLevelTo3()
-    {
-        yield return new WaitForSeconds(0.5f);
-        anim.SetBool("Taso3", true);
-    }
-
-    IEnumerator SetEnergyLevelTo4()
-    {
-        yield return new WaitForSeconds(0.5f);
-        anim.SetBool("Taso4", true);
     }
 
     IEnumerator HideRockHitsShellSprite()
