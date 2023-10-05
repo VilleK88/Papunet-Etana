@@ -18,8 +18,6 @@ public class CursorController : MonoBehaviour
     Ray ray;
     RaycastHit2D hits2D;
 
-    public int mouseClickCounter;
-
     private void Awake()
     {
         controls = new CursorControls();
@@ -44,14 +42,6 @@ public class CursorController : MonoBehaviour
         controls.Mouse.Click.performed += _ => EndedClick();
     }
 
-    private void Update()
-    {
-        if(mouseClickCounter >= 1)
-        {
-            StartCoroutine(MouseClickLimit());
-        }
-    }
-
     void StartedClick()
     {
         ChangeCursor(cursorClicked);
@@ -70,22 +60,17 @@ public class CursorController : MonoBehaviour
         hits2D = Physics2D.GetRayIntersection(ray);
         if(hits2D.collider != null)
         {
-            if(mouseClickCounter == 0)
+            if (hits2D.collider.gameObject.CompareTag("Player"))
             {
-                if (hits2D.collider.gameObject.CompareTag("Player"))
+                if (Input.GetMouseButtonDown(0) && hideHead == false)
                 {
-                    if (Input.GetMouseButtonDown(0) && hideHead == false)
-                    {
-                        etana.GetComponent<Animator>().SetTrigger("HideHead");
-                        hideHead = true;
-                        mouseClickCounter += 1;
-                    }
-                    else if (Input.GetMouseButtonDown(0) && hideHead)
-                    {
-                        etana.GetComponent<Animator>().SetTrigger("StopHiding");
-                        hideHead = false;
-                        mouseClickCounter += 1;
-                    }
+                    etana.GetComponent<Animator>().SetTrigger("HideHead");
+                    hideHead = true;
+                }
+                else if (Input.GetMouseButtonDown(0) && hideHead)
+                {
+                    etana.GetComponent<Animator>().SetTrigger("StopHiding");
+                    hideHead = false;
                 }
             }
         }
@@ -94,11 +79,5 @@ public class CursorController : MonoBehaviour
     void ChangeCursor(Texture2D cursorType)
     {
         Cursor.SetCursor(cursorType, Vector2.zero, CursorMode.Auto);
-    }
-
-    IEnumerator MouseClickLimit()
-    {
-        yield return new WaitForSeconds(0.5f);
-        mouseClickCounter = 0;
     }
 }

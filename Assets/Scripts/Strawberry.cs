@@ -28,7 +28,7 @@ public class Strawberry : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             rb2d.velocity = new Vector2(-rollSpeed, rb2d.velocity.y);
-            rb2d.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+            rb2d.AddForce(new Vector2(0, jumpForce + 2), ForceMode2D.Impulse);
         }
     }
 
