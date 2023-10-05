@@ -1081,8 +1081,6 @@ MonoBehaviour:
   cursorController: {fileID: 1241640672}
   energyLossPerSecond: 1
   shieldCounter: 0
-  iFramesDuration: 2
-  numberOfFlashes: 2
   rockHitsShell: {fileID: 823672679}
 --- !u!61 &1081073523
 BoxCollider2D:
@@ -1308,7 +1306,7 @@ GameObject:
   - component: {fileID: 1241640674}
   - component: {fileID: 1241640673}
   m_Layer: 0
-  m_Name: Cursor
+  m_Name: CursorManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1330,6 +1328,7 @@ MonoBehaviour:
   cursorClicked: {fileID: 2800000, guid: 9a1967b1f41eaa6478a99d2142fe7f14, type: 3}
   etana: {fileID: 1081073516}
   hideHead: 0
+  mouseClickCounter: 0
 --- !u!4 &1241640674
 Transform:
   m_ObjectHideFlags: 0
