@@ -28,6 +28,10 @@ public class Etana : MonoBehaviour
     private SpriteRenderer sprite;
     Color originalColor;
 
+    [SerializeField] GameObject rockHitsShell;
+    SpriteRenderer rockHitsShellSprite;
+    Animator rockHitsShellAnim;
+
     private void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
@@ -39,6 +43,9 @@ public class Etana : MonoBehaviour
         energyBar.SetStartingEnergy(startingEnergy);
         sprite = GetComponent<SpriteRenderer>();
         originalColor = sprite.color;
+
+        rockHitsShellSprite = rockHitsShell.GetComponent<SpriteRenderer>();
+        rockHitsShellAnim = rockHitsShell.GetComponent<Animator>();
     }
 
     private void Update()
@@ -158,6 +165,15 @@ public class Etana : MonoBehaviour
                 Destroy(collision.gameObject);
             }
         }
+        else
+        {
+            if(collision.gameObject.CompareTag("Rock"))
+            {
+                rockHitsShellSprite.enabled = true;
+                rockHitsShellAnim.SetTrigger("RockHitsShell");
+                StartCoroutine(HideRockHitsShellSprite());
+            }
+        }
     }
 
     public IEnumerator Invulnerability()
@@ -189,5 +205,11 @@ public class Etana : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         anim.SetBool("Taso4", true);
+    }
+
+    IEnumerator HideRockHitsShellSprite()
+    {
+        yield return new WaitForSeconds(0.2f);
+        rockHitsShellSprite.enabled = false;
     }
 }
