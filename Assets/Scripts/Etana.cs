@@ -19,7 +19,7 @@ public class Etana : MonoBehaviour
     public bool ifHiding; // fetch from cursorController -script
     public GameObject cursorController;
     public float energyLossPerSecond = 1;
-    float shieldCounterMaxTime = 2;
+    float shieldCounterMaxTime = 1;
     public float shieldCounter = 0;
 
     [Header("iFrames")]
