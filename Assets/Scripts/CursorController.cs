@@ -14,9 +14,12 @@ public class CursorController : MonoBehaviour
     [SerializeField] GameObject etana;
 
     public bool hideHead = false;
+    public bool animationPlaying;
 
     Ray ray;
     RaycastHit2D hits2D;
+
+    bool clickingCounter = false; // to prevent animation freezing
 
     private void Awake()
     {
@@ -62,18 +65,33 @@ public class CursorController : MonoBehaviour
         {
             if (hits2D.collider.gameObject.CompareTag("Player"))
             {
-                if (Input.GetMouseButtonDown(0) && hideHead == false)
+                if (Input.GetMouseButtonDown(0) && hideHead == false && !clickingCounter)
                 {
                     etana.GetComponent<Animator>().SetTrigger("HideHead");
                     hideHead = true;
+                    animationPlaying = true;
+                    StartCoroutine(ClickCounter());
                 }
-                else if (Input.GetMouseButtonDown(0) && hideHead)
+                else if (Input.GetMouseButtonDown(0) && hideHead && !clickingCounter)
                 {
                     etana.GetComponent<Animator>().SetTrigger("StopHiding");
                     hideHead = false;
+                    animationPlaying = true;
+                    StartCoroutine(ClickCounter());
+                }
+                else
+                {
+                    animationPlaying = false;
                 }
             }
         }
+    }
+
+    IEnumerator ClickCounter()
+    {
+        clickingCounter = true;
+        yield return new WaitForSeconds(0.5f);
+        clickingCounter = false;
     }
 
     void ChangeCursor(Texture2D cursorType)

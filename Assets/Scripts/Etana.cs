@@ -18,6 +18,7 @@ public class Etana : MonoBehaviour
     public EnergyBar energyBar;
     public bool ifHiding; // fetch from cursorController -script
     public GameObject cursorController;
+    bool animationPlaysFetch; // fetch from CursorController -script
     public float energyLossPerSecond = 1;
     float shieldCounterMaxTime = 1;
     public float shieldCounter = 0;
@@ -28,6 +29,7 @@ public class Etana : MonoBehaviour
 
     [SerializeField] Transform snailHead;
     CircleCollider2D snailHeadCollider;
+
 
     private void Start()
     {
@@ -49,6 +51,7 @@ public class Etana : MonoBehaviour
     private void Update()
     {
         ifHiding = cursorController.GetComponent<CursorController>().hideHead;
+        animationPlaysFetch = cursorController.GetComponent<CursorController>().animationPlaying;
 
         if (ifHiding)
         {
@@ -139,7 +142,10 @@ public class Etana : MonoBehaviour
         {
             if (collision.gameObject.CompareTag("Rock"))
             {
-                anim.SetTrigger("Kivi");
+                if(!animationPlaysFetch)
+                {
+                    anim.SetTrigger("Kivi");
+                }
                 TakeDamage(20);
                 scoreManager.scoreCount -= 5;
                 StartCoroutine(Invulnerability());
@@ -150,7 +156,10 @@ public class Etana : MonoBehaviour
                 if(collision.contacts.Length > 0 && collision.contacts[0].otherCollider.transform.
                     IsChildOf(snailHead))
                 {
-                    anim.SetTrigger("Mansikka");
+                    if(!animationPlaysFetch)
+                    {
+                        anim.SetTrigger("Mansikka");
+                    }
                     AddHealth(5);
                     scoreManager.scoreCount += 5;
                     Destroy(collision.gameObject);
