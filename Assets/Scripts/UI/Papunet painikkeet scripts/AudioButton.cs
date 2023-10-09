@@ -1,7 +1,9 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ListenButton : MonoBehaviour
+public class AudioButton : MonoBehaviour
 {
     Button button;
     Image buttonImage;
@@ -29,7 +31,7 @@ public class ListenButton : MonoBehaviour
     {
         isMutedFetch = soundManager.GetComponent<SoundManager>().isMuted;
 
-        if(!isMutedFetch)
+        if (!isMutedFetch)
         {
             soundOn = true;
         }
@@ -38,7 +40,7 @@ public class ListenButton : MonoBehaviour
             soundOn = false;
         }
 
-        if(soundOn)
+        if (soundOn)
         {
             soundOffSpeechBubble.gameObject.SetActive(false);
 
@@ -75,7 +77,7 @@ public class ListenButton : MonoBehaviour
             }
         }
 
-        if(!soundOn)
+        if (!soundOn)
         {
             soundOnSpeechBubble.gameObject.SetActive(false);
         }
