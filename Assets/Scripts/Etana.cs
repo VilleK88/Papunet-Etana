@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Etana : MonoBehaviour
 {
@@ -13,9 +14,17 @@ public class Etana : MonoBehaviour
 
     public ScoreManager scoreManager;
 
-    [SerializeField] float startingEnergy = 100;
+    public float startingEnergy = 100;
+    public float maxEnergy = 100;
+    public float chipSpeed = 2;
     public float currentEnergy;
-    public EnergyBar energyBar;
+    [SerializeField] Image frontEnergybar;
+    [SerializeField] Image backEnergybar;
+    float fillF;
+    float fillB;
+    float hFraction;
+
+
     public bool ifHiding; // fetch from cursorController -script
     public GameObject cursorController;
     bool animationPlaysFetch; // fetch from CursorController -script
@@ -38,8 +47,8 @@ public class Etana : MonoBehaviour
         boxCollider = GetComponent<BoxCollider2D>();
         anim = GetComponent<Animator>();
 
+        startingEnergy = maxEnergy;
         currentEnergy = startingEnergy;
-        energyBar.SetStartingEnergy(startingEnergy);
 
         rockHitsShellSprite = rockHitsShell.GetComponent<SpriteRenderer>();
         rockHitsShellAnim = rockHitsShell.GetComponent<Animator>();
@@ -65,6 +74,7 @@ public class Etana : MonoBehaviour
             else
             {
                 currentEnergy -= energyLossPerSecond * Time.deltaTime;
+                EnergybarLogic();
             }
         }
         else
@@ -109,15 +119,26 @@ public class Etana : MonoBehaviour
                 anim.SetBool("Taso4", false);
             }
         }
-
-        energyBar.SetEnergy(currentEnergy);
     }
 
-    public void TakeDamage(float _damage)
+    public void EnergybarLogic()
     {
-        currentEnergy = Mathf.Clamp(currentEnergy - _damage, 0, startingEnergy);
+        currentEnergy = Mathf.Clamp(currentEnergy, 0, maxEnergy);
+        fillF = frontEnergybar.fillAmount;
+        fillB = backEnergybar.fillAmount;
+        hFraction = currentEnergy / maxEnergy;
 
-        energyBar.SetEnergy(currentEnergy);
+        if(fillB > hFraction)
+        {
+            frontEnergybar.fillAmount = hFraction;
+        }
+    }
+
+    public void TakeDamage(float damage)
+    {
+        currentEnergy -= damage;
+
+        EnergybarLogic();
 
         if (currentEnergy > 0)
         {
@@ -129,11 +150,11 @@ public class Etana : MonoBehaviour
         }
     }
 
-    public void AddHealth(float _health)
+    public void AddHealth(float health)
     {
-        currentEnergy = Mathf.Clamp(currentEnergy + _health, 0, startingEnergy);
+        currentEnergy += health;
 
-        energyBar.SetEnergy(currentEnergy);
+        EnergybarLogic();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
