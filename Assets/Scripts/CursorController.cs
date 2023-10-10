@@ -23,6 +23,8 @@ public class CursorController : MonoBehaviour
 
     bool dead;
 
+    [SerializeField] AudioClip whish;
+
     private void Awake()
     {
         controls = new CursorControls();
@@ -75,6 +77,7 @@ public class CursorController : MonoBehaviour
                 if (Input.GetMouseButtonDown(0) && hideHead == false && !clickingCounter)
                 {
                     etana.GetComponent<Animator>().SetTrigger("HideHead");
+                    SoundManager.instance.PlaySound(whish);
                     hideHead = true;
                     animationPlaying = true;
                     StartCoroutine(ClickCounter());

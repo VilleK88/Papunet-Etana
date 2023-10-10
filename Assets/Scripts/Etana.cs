@@ -40,6 +40,8 @@ public class Etana : MonoBehaviour
 
     public bool dead = false;
 
+    [SerializeField] AudioClip eatsStrawberry;
+
 
     private void Start()
     {
@@ -197,6 +199,7 @@ public class Etana : MonoBehaviour
                         if (!animationPlaysFetch)
                         {
                             anim.SetTrigger("Mansikka");
+                            SoundManager.instance.PlaySound(eatsStrawberry);
                         }
                         AddHealth(5);
                         scoreManager.scoreCount += 5;

@@ -1533,6 +1533,7 @@ MonoBehaviour:
   rockHitsShell: {fileID: 823672679}
   snailHead: {fileID: 2033782740}
   dead: 0
+  eatsStrawberry: {fileID: 8300000, guid: b91843e56b0a8534abd0a9084389307f, type: 3}
 --- !u!61 &1081073523
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1891,6 +1892,7 @@ MonoBehaviour:
   etana: {fileID: 1081073516}
   hideHead: 0
   animationPlaying: 0
+  whish: {fileID: 8300000, guid: 1c93dca16499d7e4a83899c8d84cb0fb, type: 3}
 --- !u!4 &1241640674
 Transform:
   m_ObjectHideFlags: 0
