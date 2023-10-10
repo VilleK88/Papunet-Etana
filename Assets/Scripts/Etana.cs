@@ -125,9 +125,7 @@ public class Etana : MonoBehaviour
         }
         else
         {
-            //anim.SetBool("Taso4", false);
-            //anim.SetTrigger("Die");
-            //anim.SetBool("Die", true);
+            rb2d.bodyType = RigidbodyType2D.Dynamic;
         }
 
         if (currentEnergy <= 0)
