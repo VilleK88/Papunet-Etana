@@ -1840,6 +1840,7 @@ MonoBehaviour:
   - {fileID: 6726567815319272426, guid: c927a7c4a8487e74a98fd7a6d964cf70, type: 3}
   - {fileID: 1918615858331893041, guid: d96accc09f2d58e40950f74be64878f8, type: 3}
   spawnPoint: {fileID: 1651444643}
+  etana: {fileID: 1081073522}
 --- !u!4 &1227002510
 Transform:
   m_ObjectHideFlags: 0
