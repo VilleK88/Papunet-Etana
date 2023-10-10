@@ -21,6 +21,8 @@ public class CursorController : MonoBehaviour
 
     bool clickingCounter = false; // to prevent animation freezing
 
+    bool dead;
+
     private void Awake()
     {
         controls = new CursorControls();
@@ -45,6 +47,11 @@ public class CursorController : MonoBehaviour
         controls.Mouse.Click.performed += _ => EndedClick();
     }
 
+    private void Update()
+    {
+        dead = etana.GetComponent<Etana>().dead;
+    }
+
     void StartedClick()
     {
         ChangeCursor(cursorClicked);
@@ -61,7 +68,7 @@ public class CursorController : MonoBehaviour
         ray = mainCamera.ScreenPointToRay(controls.Mouse.Position.ReadValue<Vector2>());
 
         hits2D = Physics2D.GetRayIntersection(ray);
-        if(hits2D.collider != null)
+        if(hits2D.collider != null && !dead)
         {
             if (hits2D.collider.gameObject.CompareTag("Player"))
             {

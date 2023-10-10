@@ -24,7 +24,6 @@ public class Etana : MonoBehaviour
     float fillB;
     float hFraction;
 
-
     public bool ifHiding; // fetch from cursorController -script
     public GameObject cursorController;
     bool animationPlaysFetch; // fetch from CursorController -script
@@ -38,6 +37,8 @@ public class Etana : MonoBehaviour
 
     [SerializeField] Transform snailHead;
     CircleCollider2D snailHeadCollider;
+
+    public bool dead = false;
 
 
     private void Start()
@@ -62,62 +63,76 @@ public class Etana : MonoBehaviour
         ifHiding = cursorController.GetComponent<CursorController>().hideHead;
         animationPlaysFetch = cursorController.GetComponent<CursorController>().animationPlaying;
 
-        if (ifHiding)
+        if(!dead)
         {
-            snailHeadCollider.enabled = false;
-            //boxCollider.enabled = false;
-
-            if (shieldCounterMaxTime > shieldCounter)
+            if (ifHiding)
             {
-                shieldCounter += Time.deltaTime;
+                snailHeadCollider.enabled = false;
+                //boxCollider.enabled = false;
+
+                if (shieldCounterMaxTime > shieldCounter)
+                {
+                    shieldCounter += Time.deltaTime;
+                }
+                else
+                {
+                    currentEnergy -= energyLossPerSecond * Time.deltaTime;
+                    EnergybarLogic();
+                }
             }
             else
             {
-                currentEnergy -= energyLossPerSecond * Time.deltaTime;
-                EnergybarLogic();
+                snailHeadCollider.enabled = true;
+                //boxCollider.enabled = true;
+                shieldCounter = 0;
+
+                if (currentEnergy > 74)
+                {
+                    anim.SetBool("Taso1", true);
+                }
+                else
+                {
+                    anim.SetBool("Taso1", false);
+                }
+
+                if (currentEnergy < 75 && currentEnergy > 49)
+                {
+                    anim.SetBool("Taso2", true);
+                }
+                else
+                {
+                    anim.SetBool("Taso2", false);
+                }
+
+                if (currentEnergy < 50 && currentEnergy > 24)
+                {
+                    anim.SetBool("Taso3", true);
+                }
+                else
+                {
+                    anim.SetBool("Taso3", false);
+                }
+
+                if (currentEnergy < 25)
+                {
+                    anim.SetBool("Taso4", true);
+                }
+                else
+                {
+                    anim.SetBool("Taso4", false);
+                }
             }
         }
         else
         {
-            snailHeadCollider.enabled = true;
-            //boxCollider.enabled = true;
-            shieldCounter = 0;
+            //anim.SetBool("Taso4", false);
+            //anim.SetTrigger("Die");
+            //anim.SetBool("Die", true);
+        }
 
-            if(currentEnergy > 74)
-            {
-                anim.SetBool("Taso1", true);
-            }
-            else
-            {
-                anim.SetBool("Taso1", false);
-            }
-
-            if(currentEnergy < 75 && currentEnergy > 49)
-            {
-                anim.SetBool("Taso2", true);
-            }
-            else
-            {
-                anim.SetBool("Taso2", false);
-            }
-
-            if(currentEnergy < 50 && currentEnergy > 24)
-            {
-                anim.SetBool("Taso3", true);
-            }
-            else
-            {
-                anim.SetBool("Taso3", false);
-            }
-
-            if(currentEnergy < 25)
-            {
-                anim.SetBool("Taso4", true);
-            }
-            else
-            {
-                anim.SetBool("Taso4", false);
-            }
+        if (currentEnergy <= 0)
+        {
+            dead = true;
         }
     }
 
@@ -147,6 +162,7 @@ public class Etana : MonoBehaviour
         else
         {
             // Player dead.
+            anim.SetTrigger("Die");
         }
     }
 
@@ -159,41 +175,44 @@ public class Etana : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(!ifHiding)
+        if(!dead)
         {
-            if (collision.gameObject.CompareTag("Rock"))
+            if (!ifHiding)
             {
-                if(!animationPlaysFetch)
+                if (collision.gameObject.CompareTag("Rock"))
                 {
-                    anim.SetTrigger("Kivi");
-                }
-                TakeDamage(20);
-                scoreManager.scoreCount -= 5;
-                StartCoroutine(Invulnerability());
-            }
-
-            if (collision.gameObject.CompareTag("Strawberry"))
-            {
-                if(collision.contacts.Length > 0 && collision.contacts[0].otherCollider.transform.
-                    IsChildOf(snailHead))
-                {
-                    if(!animationPlaysFetch)
+                    if (!animationPlaysFetch)
                     {
-                        anim.SetTrigger("Mansikka");
+                        anim.SetTrigger("Kivi");
                     }
-                    AddHealth(5);
-                    scoreManager.scoreCount += 5;
-                    Destroy(collision.gameObject);
+                    TakeDamage(20);
+                    scoreManager.scoreCount -= 5;
+                    StartCoroutine(Invulnerability());
+                }
+
+                if (collision.gameObject.CompareTag("Strawberry"))
+                {
+                    if (collision.contacts.Length > 0 && collision.contacts[0].otherCollider.transform.
+                        IsChildOf(snailHead))
+                    {
+                        if (!animationPlaysFetch)
+                        {
+                            anim.SetTrigger("Mansikka");
+                        }
+                        AddHealth(5);
+                        scoreManager.scoreCount += 5;
+                        Destroy(collision.gameObject);
+                    }
                 }
             }
-        }
-        else
-        {
-            if(collision.gameObject.CompareTag("Rock"))
+            else
             {
-                rockHitsShellSprite.enabled = true;
-                rockHitsShellAnim.SetTrigger("RockHitsShell");
-                StartCoroutine(HideRockHitsShellSprite());
+                if (collision.gameObject.CompareTag("Rock"))
+                {
+                    rockHitsShellSprite.enabled = true;
+                    rockHitsShellAnim.SetTrigger("RockHitsShell");
+                    StartCoroutine(HideRockHitsShellSprite());
+                }
             }
         }
     }
