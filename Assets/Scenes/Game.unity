@@ -1087,7 +1087,6 @@ GameObject:
   - component: {fileID: 1081073521}
   - component: {fileID: 1081073520}
   - component: {fileID: 1081073523}
-  - component: {fileID: 1081073524}
   m_Layer: 6
   m_Name: Etana
   m_TagString: Player
@@ -1247,6 +1246,7 @@ MonoBehaviour:
   shieldCounter: 0
   rockHitsShell: {fileID: 823672679}
   snailHead: {fileID: 2033782740}
+  dead: 0
 --- !u!61 &1081073523
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1273,18 +1273,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6677754, y: 0.918972}
   m_EdgeRadius: 0
---- !u!114 &1081073524
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1081073516}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f3b73ddf56b72e43b46720e37781fd7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1178916216
 GameObject:
   m_ObjectHideFlags: 0

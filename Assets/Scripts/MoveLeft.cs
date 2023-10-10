@@ -10,10 +10,12 @@ public class MoveLeft : MonoBehaviour
 
     [SerializeField] Etana etana;
     bool ifHiding; // fetch from Etana -script
+    bool dead;
 
     private void Update()
     {
         ifHiding = etana.GetComponent<Etana>().ifHiding;
+        dead = etana.GetComponent<Etana>().dead;
 
         if(!ifHiding)
         {
@@ -21,7 +23,7 @@ public class MoveLeft : MonoBehaviour
             {
                 counter += Time.deltaTime;
             }
-            else
+            else if(!dead)
             {
                 transform.Translate(Vector2.left * speed * Time.deltaTime);
             }
