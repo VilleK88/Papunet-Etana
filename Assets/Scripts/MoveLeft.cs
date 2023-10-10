@@ -12,6 +12,12 @@ public class MoveLeft : MonoBehaviour
     bool ifHiding; // fetch from Etana -script
     bool dead;
 
+    float firstCounter = 0;
+    float firstMaxTime = 0.65f;
+
+    float secondCounter = 0;
+    float secondMaxTime = 0.2f;
+
     private void Update()
     {
         ifHiding = etana.GetComponent<Etana>().ifHiding;
@@ -26,11 +32,31 @@ public class MoveLeft : MonoBehaviour
             else if(!dead)
             {
                 transform.Translate(Vector2.left * speed * Time.deltaTime);
+
+                /*if (firstCounter < firstMaxTime)
+                {
+                    firstCounter += Time.deltaTime;
+                    transform.Translate(Vector2.left * speed * Time.deltaTime);
+                }
+                else
+                {
+                    if(secondCounter < secondMaxTime)
+                    {
+                        secondCounter += Time.deltaTime;
+                    }
+                    else
+                    {
+                        firstCounter = 0;
+                        secondCounter = 0;
+                    }
+                }*/
             }
         }
         else
         {
             counter = 0;
+            //firstCounter = 0;
+            //secondCounter = 0;
         }
     }
 }
