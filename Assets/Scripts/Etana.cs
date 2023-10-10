@@ -126,6 +126,7 @@ public class Etana : MonoBehaviour
         else
         {
             rb2d.bodyType = RigidbodyType2D.Dynamic;
+            anim.SetBool("Dead", true);
         }
 
         if (currentEnergy <= 0)
