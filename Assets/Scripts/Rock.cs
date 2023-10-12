@@ -5,8 +5,8 @@ using UnityEngine;
 public class Rock : MonoBehaviour
 {
     Rigidbody2D rb2d;
-    float rollSpeed = 3;
-    float jumpForce = 4.7f; // original jump force 4.6f
+    float rollSpeed = 3.0f;
+    float jumpForce = 4.6f; // original jump force 4.6f
 
     private void Start()
     {
