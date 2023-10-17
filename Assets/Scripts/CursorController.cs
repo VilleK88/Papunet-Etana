@@ -60,6 +60,7 @@ public class CursorController : MonoBehaviour
     {
         dead = etana.GetComponent<Etana>().dead;
         PreventUsingMouseAndKeyBoardInputAtTheSameTime();
+        DetectObject();
     }
 
     void StartedClick()
