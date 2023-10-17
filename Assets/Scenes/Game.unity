@@ -828,6 +828,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverSprite: {fileID: 21300000, guid: 81692e04f71fcd54185ccc820faa2b6a, type: 3}
+  mouse_over: 0
 --- !u!114 &593528378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1887,8 +1888,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 168a02742a70af249a7016aef8597bb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cursor: {fileID: 2800000, guid: 923905ca0f04acb49b0f195f0a917713, type: 3}
-  cursorClicked: {fileID: 2800000, guid: 9a1967b1f41eaa6478a99d2142fe7f14, type: 3}
+  cursor: {fileID: 0}
+  cursorClicked: {fileID: 0}
   etana: {fileID: 1081073516}
   hideHead: 0
   animationPlaying: 0

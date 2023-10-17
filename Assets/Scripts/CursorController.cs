@@ -25,6 +25,13 @@ public class CursorController : MonoBehaviour
 
     [SerializeField] AudioClip whish;
 
+    Event ret;
+    Event spa;
+    Event mouse;
+    bool isLeftMouseButtonDown;
+    bool isReturnPressed;
+    bool isSpacePressed;
+
     private void Awake()
     {
         controls = new CursorControls();
@@ -52,6 +59,7 @@ public class CursorController : MonoBehaviour
     private void Update()
     {
         dead = etana.GetComponent<Etana>().dead;
+        PreventUsingMouseAndKeyBoardInputAtTheSameTime();
     }
 
     void StartedClick()
@@ -74,7 +82,8 @@ public class CursorController : MonoBehaviour
         {
             if (hits2D.collider.gameObject.CompareTag("Player"))
             {
-                if (Input.GetMouseButtonDown(0) && hideHead == false && !clickingCounter)
+                if ((Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Return) ||
+                    Input.GetKeyDown(KeyCode.Space)) && hideHead == false && !clickingCounter)
                 {
                     etana.GetComponent<Animator>().SetTrigger("HideHead");
                     SoundManager.instance.PlaySound(whish);
@@ -82,7 +91,8 @@ public class CursorController : MonoBehaviour
                     animationPlaying = true;
                     StartCoroutine(ClickCounter());
                 }
-                else if (Input.GetMouseButtonDown(0) && hideHead && !clickingCounter)
+                else if ((Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Return) ||
+                    Input.GetKeyDown(KeyCode.Space)) && hideHead && !clickingCounter)
                 {
                     etana.GetComponent<Animator>().SetTrigger("StopHiding");
                     hideHead = false;
@@ -107,5 +117,52 @@ public class CursorController : MonoBehaviour
     void ChangeCursor(Texture2D cursorType)
     {
         Cursor.SetCursor(cursorType, Vector2.zero, CursorMode.Auto);
+    }
+
+    void PreventUsingMouseAndKeyBoardInputAtTheSameTime()
+    {
+        isLeftMouseButtonDown = Input.GetMouseButtonDown(0);
+        isReturnPressed = Input.GetKeyDown(KeyCode.Return);
+        isSpacePressed = Input.GetKeyDown(KeyCode.Space);
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            ret = Event.current;
+            if (ret != null && (ret.isKey && ret.keyCode == KeyCode.Return))
+            {
+                ret.Use();
+            }
+            spa = Event.current;
+            if (spa != null && (spa.isKey && spa.keyCode == KeyCode.Space))
+            {
+                spa.Use();
+            }
+        }
+        else if (isReturnPressed)
+        {
+            mouse = Event.current;
+            if (mouse != null && mouse.isMouse)
+            {
+                mouse.Use();
+            }
+            spa = Event.current;
+            if (spa != null && (spa.isKey && spa.keyCode == KeyCode.Space))
+            {
+                spa.Use();
+            }
+        }
+        else if (isSpacePressed)
+        {
+            mouse = Event.current;
+            if (mouse != null && mouse.isMouse)
+            {
+                mouse.Use();
+            }
+            ret = Event.current;
+            if (ret != null && (ret.isKey && ret.keyCode == KeyCode.Return))
+            {
+                ret.Use();
+            }
+        }
     }
 }

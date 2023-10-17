@@ -1,7 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class GuideButton : MonoBehaviour
+public class GuideButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     Button button;
     Image buttonImage;
@@ -9,9 +10,14 @@ public class GuideButton : MonoBehaviour
     public Sprite hoverSprite;
     public GameObject speechBubble;
 
+    RectTransform buttonRect;
+    Vector2 localMousePosition;
+    public bool mouse_over = false;
+
     void Start()
     {
         button = GetComponent<Button>();
+        buttonRect = GetComponent<RectTransform>();
         buttonImage = button.image;
         originalSprite = buttonImage.sprite;
         speechBubble.gameObject.SetActive(false);
@@ -19,8 +25,7 @@ public class GuideButton : MonoBehaviour
 
     public void Update()
     {
-        if (RectTransformUtility.RectangleContainsScreenPoint(buttonImage.rectTransform,
-            Input.mousePosition))
+        if (IsMouseOverButton())
         {
             buttonImage.sprite = hoverSprite;
             speechBubble.gameObject.SetActive(true);
@@ -31,5 +36,23 @@ public class GuideButton : MonoBehaviour
             buttonImage.sprite = originalSprite;
             speechBubble.gameObject.SetActive(false);
         }
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        mouse_over = true;
+        Debug.Log("Mouse enter");
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        mouse_over = false;
+        Debug.Log("Mouse exit");
+    }
+
+    public bool IsMouseOverButton()
+    {
+        localMousePosition = buttonRect.InverseTransformPoint(Input.mousePosition);
+        return buttonRect.rect.Contains(localMousePosition);
     }
 }

@@ -1,7 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class ButtonImageChanger : MonoBehaviour
+public class ButtonImageChanger : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     Button button;
     Image buttonImage;
@@ -9,11 +10,16 @@ public class ButtonImageChanger : MonoBehaviour
     public Sprite hoverSprite;
     //TextMeshProUGUI buttonText;
 
+    RectTransform buttonRect;
+    Vector2 localMousePosition;
+    public bool mouse_over = false;
+
     public GameObject speechBubble;
 
     void Start()
     {
         button = GetComponent<Button>();
+        buttonRect = GetComponent<RectTransform>();
         buttonImage = button.image;
         originalSprite = buttonImage.sprite;
 
@@ -43,5 +49,23 @@ public class ButtonImageChanger : MonoBehaviour
             //ohjePuhekupla.gameObject.SetActive(false);
             speechBubble.gameObject.SetActive(false);
         }
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        mouse_over = true;
+        Debug.Log("Mouse enter");
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        mouse_over = false;
+        Debug.Log("Mouse exit");
+    }
+
+    public bool IsMouseOverButton()
+    {
+        localMousePosition = buttonRect.InverseTransformPoint(Input.mousePosition);
+        return buttonRect.rect.Contains(localMousePosition);
     }
 }
