@@ -557,6 +557,7 @@ GameObject:
   - component: {fileID: 468914227}
   - component: {fileID: 468914226}
   - component: {fileID: 468914229}
+  - component: {fileID: 468914230}
   m_Layer: 0
   m_Name: Ground
   m_TagString: Ground
@@ -657,6 +658,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &468914230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 468914225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d9c8b71ef682184fbb59f22480b0043, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rockandStrawberryBounceSound: {fileID: 8300000, guid: fd9c1ba922e435d45a0b5725bc0436f1, type: 3}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1534,7 +1548,10 @@ MonoBehaviour:
   rockHitsShell: {fileID: 823672679}
   snailHead: {fileID: 2033782740}
   dead: 0
-  eatsStrawberry: {fileID: 8300000, guid: b91843e56b0a8534abd0a9084389307f, type: 3}
+  eatsStrawberry: {fileID: 8300000, guid: 8cdab6105cfc3064f9d8a16cd1a1996a, type: 3}
+  rockHitsEtskuSound: {fileID: 8300000, guid: b0d8f71b37e5f0f438223ea8301268eb, type: 3}
+  rockHitsShellSound: {fileID: 8300000, guid: 21e8c55d97bada545954c900bda81472, type: 3}
+  draggingAroundTheGround: {fileID: 8300000, guid: 9a9686ca7f2c3cb4baf8ea442986e0cf, type: 3}
 --- !u!61 &1081073523
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1893,7 +1910,7 @@ MonoBehaviour:
   etana: {fileID: 1081073516}
   hideHead: 0
   animationPlaying: 0
-  whish: {fileID: 8300000, guid: 1c93dca16499d7e4a83899c8d84cb0fb, type: 3}
+  whish: {fileID: 8300000, guid: 118cd48e00563884ea3fb666b323e93b, type: 3}
 --- !u!4 &1241640674
 Transform:
   m_ObjectHideFlags: 0

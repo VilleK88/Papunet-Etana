@@ -41,7 +41,9 @@ public class Etana : MonoBehaviour
     public bool dead = false;
 
     [SerializeField] AudioClip eatsStrawberry;
-
+    [SerializeField] AudioClip rockHitsEtskuSound;
+    [SerializeField] AudioClip rockHitsShellSound;
+    [SerializeField] AudioClip draggingAroundTheGround;
 
     private void Start()
     {
@@ -87,6 +89,7 @@ public class Etana : MonoBehaviour
                 snailHeadCollider.enabled = true;
                 //boxCollider.enabled = true;
                 shieldCounter = 0;
+                //SoundManager.instance.PlaySound(draggingAroundTheGround);
 
                 if (currentEnergy > 74)
                 {
@@ -185,6 +188,7 @@ public class Etana : MonoBehaviour
                     if (!animationPlaysFetch)
                     {
                         anim.SetTrigger("Kivi");
+                        SoundManager.instance.PlaySound(rockHitsEtskuSound);
                     }
                     TakeDamage(20);
                     scoreManager.scoreCount -= 5;
@@ -205,6 +209,10 @@ public class Etana : MonoBehaviour
                         scoreManager.scoreCount += 5;
                         Destroy(collision.gameObject);
                     }
+                    else
+                    {
+                        SoundManager.instance.PlaySound(rockHitsShellSound);
+                    }
                 }
             }
             else
@@ -213,7 +221,12 @@ public class Etana : MonoBehaviour
                 {
                     rockHitsShellSprite.enabled = true;
                     rockHitsShellAnim.SetTrigger("RockHitsShell");
+                    SoundManager.instance.PlaySound(rockHitsShellSound);
                     StartCoroutine(HideRockHitsShellSprite());
+                }
+                if(collision.gameObject.CompareTag("Strawberry"))
+                {
+                    SoundManager.instance.PlaySound(rockHitsShellSound);
                 }
             }
         }
