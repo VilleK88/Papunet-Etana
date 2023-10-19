@@ -1,0 +1,611 @@
+fileFormatVersion: 2
+guid: acef0e556b7254f44905433d42cf5877
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: animaatio_etsku_liikkuueteenpain_energiataso_suurin_1_pienennetty_0
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 509
+        width: 354
+        height: 284
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 230fb1f76fa95dd429c054a6ddae80f1
+      internalID: 901089691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animaatio_etsku_liikkuueteenpain_energiataso_suurin_1_pienennetty_1
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 506
+        width: 354
+        height: 287
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de73b42db276c014babf5345cb83e23e
+      internalID: -1548854431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animaatio_etsku_liikkuueteenpain_energiataso_suurin_1_pienennetty_2
+      rect:
+        serializedVersion: 2
+        x: 1199
+        y: 506
+        width: 354
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcd9f03e293ef834fbc0068b5d7bae37
+      internalID: 314413269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animaatio_etsku_liikkuueteenpain_energiataso_suurin_1_pienennetty_3
+      rect:
+        serializedVersion: 2
+        x: 1747
+        y: 506
+        width: 360
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 733edc28d317c6f4e94a5c1d8f924ad4
+      internalID: -1427498472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animaatio_etsku_liikkuueteenpain_energiataso_suurin_1_pienennetty_4
+      rect:
+        serializedVersion: 2
+        x: 2292
+        y: 504
+        width: 371
+        height: 287
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e5163d03d4112549bf68d9541d2830d
+      internalID: -144444025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animaatio_etsku_liikkuueteenpain_energiataso_suurin_1_pienennetty_5
+      rect:
+        serializedVersion: 2
+        x: 2843
+        y: 501
+        width: 376
+        height: 291
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0899d1349a9d10d43a926b1b5a01af56
+      internalID: 1859191579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animaatio_etsku_liikkuueteenpain_energiataso_suurin_1_pienennetty_6
+      rect:
+        serializedVersion: 2
+        x: 3385
+        y: 495
+        width: 390
+        height: 299
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89a9b04f254699743902a4ef8ec62d5b
+      internalID: 186506965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animaatio_etsku_liikkuueteenpain_energiataso_suurin_1_pienennetty_7
+      rect:
+        serializedVersion: 2
+        x: 3936
+        y: 493
+        width: 392
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d983307737a353428ba3340787d4eba
+      internalID: -743278198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animaatio_etsku_liikkuueteenpain_energiataso_suurin_1_pienennetty_8
+      rect:
+        serializedVersion: 2
+        x: 4485
+        y: 493
+        width: 393
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc77579b1400e074682740fa1e7dd788
+      internalID: -362048819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animaatio_etsku_liikkuueteenpain_energiataso_suurin_1_pienennetty_9
+      rect:
+        serializedVersion: 2
+        x: 5034
+        y: 490
+        width: 397
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 087ea9b990a44f84387a1d633cf1dc63
+      internalID: -144953667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animaatio_etsku_liikkuueteenpain_energiataso_suurin_1_pienennetty_10
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 60
+        width: 394
+        height: 296
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d844046bb5466148b871df7463f5589
+      internalID: -902821898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animaatio_etsku_liikkuueteenpain_energiataso_suurin_1_pienennetty_11
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 63
+        width: 395
+        height: 295
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d21c625d9a29f094cac7e15f0043d7ce
+      internalID: -468383268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animaatio_etsku_liikkuueteenpain_energiataso_suurin_1_pienennetty_12
+      rect:
+        serializedVersion: 2
+        x: 1186
+        y: 63
+        width: 392
+        height: 295
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed585bc7bcd532346a53a1d25ab80e20
+      internalID: 2112806374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animaatio_etsku_liikkuueteenpain_energiataso_suurin_1_pienennetty_13
+      rect:
+        serializedVersion: 2
+        x: 1736
+        y: 63
+        width: 390
+        height: 301
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67e94a34c7ed57849863108d8ac13062
+      internalID: 1449005791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animaatio_etsku_liikkuueteenpain_energiataso_suurin_1_pienennetty_14
+      rect:
+        serializedVersion: 2
+        x: 2292
+        y: 69
+        width: 377
+        height: 292
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be05c77aaacc9ac44a5711d969f026a3
+      internalID: -1007979785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animaatio_etsku_liikkuueteenpain_energiataso_suurin_1_pienennetty_15
+      rect:
+        serializedVersion: 2
+        x: 2843
+        y: 74
+        width: 370
+        height: 287
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fa9e697dc86ff04eb257ae58a1c8a95
+      internalID: 1471992226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animaatio_etsku_liikkuueteenpain_energiataso_suurin_1_pienennetty_16
+      rect:
+        serializedVersion: 2
+        x: 3396
+        y: 74
+        width: 360
+        height: 284
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 055381169f3f5334fb3dbcfd98aad53f
+      internalID: 351050859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animaatio_etsku_liikkuueteenpain_energiataso_suurin_1_pienennetty_17
+      rect:
+        serializedVersion: 2
+        x: 3949
+        y: 77
+        width: 354
+        height: 284
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc41331fd7c1065459bc192539c44564
+      internalID: 1859255040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animaatio_etsku_liikkuueteenpain_energiataso_suurin_1_pienennetty_18
+      rect:
+        serializedVersion: 2
+        x: 4500
+        y: 77
+        width: 351
+        height: 284
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1f99109c1e9f5a47ab281314dbd9375
+      internalID: -812968678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animaatio_etsku_liikkuueteenpain_energiataso_suurin_1_pienennetty_19
+      rect:
+        serializedVersion: 2
+        x: 5048
+        y: 77
+        width: 354
+        height: 284
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc1a87ae8707b6b4bb1e003dc9258361
+      internalID: 57408044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      animaatio_etsku_liikkuueteenpain_energiataso_suurin_1_pienennetty_0: 901089691
+      animaatio_etsku_liikkuueteenpain_energiataso_suurin_1_pienennetty_1: -1548854431
+      animaatio_etsku_liikkuueteenpain_energiataso_suurin_1_pienennetty_10: -902821898
+      animaatio_etsku_liikkuueteenpain_energiataso_suurin_1_pienennetty_11: -468383268
+      animaatio_etsku_liikkuueteenpain_energiataso_suurin_1_pienennetty_12: 2112806374
+      animaatio_etsku_liikkuueteenpain_energiataso_suurin_1_pienennetty_13: 1449005791
+      animaatio_etsku_liikkuueteenpain_energiataso_suurin_1_pienennetty_14: -1007979785
+      animaatio_etsku_liikkuueteenpain_energiataso_suurin_1_pienennetty_15: 1471992226
+      animaatio_etsku_liikkuueteenpain_energiataso_suurin_1_pienennetty_16: 351050859
+      animaatio_etsku_liikkuueteenpain_energiataso_suurin_1_pienennetty_17: 1859255040
+      animaatio_etsku_liikkuueteenpain_energiataso_suurin_1_pienennetty_18: -812968678
+      animaatio_etsku_liikkuueteenpain_energiataso_suurin_1_pienennetty_19: 57408044
+      animaatio_etsku_liikkuueteenpain_energiataso_suurin_1_pienennetty_2: 314413269
+      animaatio_etsku_liikkuueteenpain_energiataso_suurin_1_pienennetty_3: -1427498472
+      animaatio_etsku_liikkuueteenpain_energiataso_suurin_1_pienennetty_4: -144444025
+      animaatio_etsku_liikkuueteenpain_energiataso_suurin_1_pienennetty_5: 1859191579
+      animaatio_etsku_liikkuueteenpain_energiataso_suurin_1_pienennetty_6: 186506965
+      animaatio_etsku_liikkuueteenpain_energiataso_suurin_1_pienennetty_7: -743278198
+      animaatio_etsku_liikkuueteenpain_energiataso_suurin_1_pienennetty_8: -362048819
+      animaatio_etsku_liikkuueteenpain_energiataso_suurin_1_pienennetty_9: -144953667
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
