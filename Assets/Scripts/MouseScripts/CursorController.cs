@@ -1,30 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class CursorController : MonoBehaviour
 {
-    public Texture2D cursor;
-    public Texture2D cursorClicked;
-
     CursorControls controls;
-
+    //public Texture2D cursor;
+    //public Texture2D cursorClicked;
+    public Texture2D cursorOriginal;
+    public Texture2D cursorHover;
     Camera mainCamera;
-
     [SerializeField] GameObject etana;
-
     public bool hideHead = false;
     public bool animationPlaying;
-
     Ray ray;
     RaycastHit2D hits2D;
-
     bool clickingCounter = false; // to prevent animation freezing
-
     bool dead;
-
     [SerializeField] AudioClip whish;
-
     Event ret;
     Event spa;
     Event mouse;
@@ -35,7 +27,7 @@ public class CursorController : MonoBehaviour
     private void Awake()
     {
         controls = new CursorControls();
-        ChangeCursor(cursor);
+        ChangeCursor(cursorOriginal);
         Cursor.lockState = CursorLockMode.Confined;
         mainCamera = Camera.main;
     }
@@ -65,12 +57,12 @@ public class CursorController : MonoBehaviour
 
     void StartedClick()
     {
-        ChangeCursor(cursorClicked);
+        //ChangeCursor(cursorClicked);
     }
 
     void EndedClick()
     {
-        ChangeCursor(cursor);
+        //ChangeCursor(cursor);
         DetectObject();
     }
 
