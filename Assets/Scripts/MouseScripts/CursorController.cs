@@ -36,8 +36,11 @@ public class CursorController : MonoBehaviour
     }
     private void Update()
     {
-        EnterInput();
-        DetectObject();
+        if(etana != null)
+        {
+            EnterInput();
+            DetectObject();
+        }
     }
     void StartedClick()
     {
