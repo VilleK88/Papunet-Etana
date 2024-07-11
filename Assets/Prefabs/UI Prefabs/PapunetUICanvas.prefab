@@ -312,7 +312,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 549.00006, y: 200}
+  m_AnchoredPosition: {x: 551.9999, y: 192.99998}
   m_SizeDelta: {x: 228.8235, y: 74.3676}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &258319416
@@ -375,9 +375,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
     m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 1, g: 1, b: 1, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -464,7 +464,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 585, y: -197}
+  m_AnchoredPosition: {x: 590, y: -194}
   m_SizeDelta: {x: 161.1748, y: 83.1503}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &723478728
@@ -540,7 +540,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 549, y: 200}
+  m_AnchoredPosition: {x: 552, y: 193}
   m_SizeDelta: {x: 237.9763, y: 83.5206}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &774708504
@@ -982,8 +982,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000026703, y: -28}
-  m_SizeDelta: {x: 1392.1, y: 572.5905}
+  m_AnchoredPosition: {x: -0.000026703, y: -22.298}
+  m_SizeDelta: {x: 1392.1, y: 511.24}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1278652059
 CanvasRenderer:
@@ -1013,7 +1013,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 924889b7257da9441bc064f0e87381ed, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1361945a65d6e6e4187d5719494fb828, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1089,8 +1089,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Tekniikka: Ville Karppinen (Taitotalo)\nGrafiikka:\nAlkuper\xE4inen toteutus
-    Papunet"
+  m_text: "Tekniikka: Ville Karppinen (Taitotalo)\nGrafiikka: Neo Aarnikotka\nAlkuper\xE4inen
+    toteutus Papunet"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: abd03312d5f206e4d8d5fc38b9274471, type: 2}
   m_sharedMaterial: {fileID: -39043688324784363, guid: abd03312d5f206e4d8d5fc38b9274471, type: 2}
@@ -1196,7 +1196,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 585.00006, y: -197}
+  m_AnchoredPosition: {x: 590.0001, y: -194}
   m_SizeDelta: {x: 152.0626, y: 74.0378}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1811517764

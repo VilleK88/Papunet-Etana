@@ -1028,14 +1028,6 @@ PrefabInstance:
       propertyPath: inputManager
       value: 
       objectReference: {fileID: 2970555579631995542}
-    - target: {fileID: 867116140, guid: e970aaadf301a9b4c83eab3c43022f87, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1278652056, guid: e970aaadf301a9b4c83eab3c43022f87, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1355966063, guid: e970aaadf301a9b4c83eab3c43022f87, type: 3}
       propertyPath: cursor
       value: 
@@ -1052,11 +1044,6 @@ PrefabInstance:
       propertyPath: inputManager
       value: 
       objectReference: {fileID: 2970555579631995542}
-    - target: {fileID: 1617436258, guid: e970aaadf301a9b4c83eab3c43022f87, type: 3}
-      propertyPath: m_text
-      value: "Tekniikka: Ville Karppinen (Taitotalo)\nGrafiikka: Neo Aarnikotka\nAlkuper\xE4inen
-        toteutus Papunet"
-      objectReference: {fileID: 0}
     - target: {fileID: 1811517765, guid: e970aaadf301a9b4c83eab3c43022f87, type: 3}
       propertyPath: cursor
       value: 
@@ -1710,17 +1697,21 @@ PrefabInstance:
     - target: {fileID: 2970555580189301823, guid: e19de7ba55f1f7d48b2c9a3f28c980a5, type: 3}
       propertyPath: buttons.Array.data[0]
       value: 
-      objectReference: {fileID: 1355966058}
+      objectReference: {fileID: 58879397}
     - target: {fileID: 2970555580189301823, guid: e19de7ba55f1f7d48b2c9a3f28c980a5, type: 3}
       propertyPath: buttons.Array.data[1]
       value: 
-      objectReference: {fileID: 1355966057}
+      objectReference: {fileID: 1355966058}
     - target: {fileID: 2970555580189301823, guid: e19de7ba55f1f7d48b2c9a3f28c980a5, type: 3}
       propertyPath: buttons.Array.data[2]
       value: 
-      objectReference: {fileID: 1355966056}
+      objectReference: {fileID: 1355966057}
     - target: {fileID: 2970555580189301823, guid: e19de7ba55f1f7d48b2c9a3f28c980a5, type: 3}
       propertyPath: buttons.Array.data[3]
+      value: 
+      objectReference: {fileID: 1355966056}
+    - target: {fileID: 2970555580189301823, guid: e19de7ba55f1f7d48b2c9a3f28c980a5, type: 3}
+      propertyPath: buttons.Array.data[4]
       value: 
       objectReference: {fileID: 1355966055}
     m_RemovedComponents: []

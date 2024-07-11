@@ -49,7 +49,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
   guideButtons: []
   isEndingMenuOpen: 0
-  canThrow: 1
   keyboardInput: 0
