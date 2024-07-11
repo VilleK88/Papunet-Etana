@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 public class Etana : MonoBehaviour
@@ -54,18 +53,13 @@ public class Etana : MonoBehaviour
     {
         ifHiding = cursorController.GetComponent<CursorController>().hideHead;
         animationPlaysFetch = cursorController.GetComponent<CursorController>().animationPlaying;
-
         if(!dead)
         {
             if (ifHiding)
             {
                 snailHeadCollider.enabled = false;
-                //boxCollider.enabled = false;
-
                 if (shieldCounterMaxTime > shieldCounter)
-                {
                     shieldCounter += Time.deltaTime;
-                }
                 else
                 {
                     currentEnergy -= energyLossPerSecond * Time.deltaTime;
@@ -75,9 +69,7 @@ public class Etana : MonoBehaviour
             else
             {
                 snailHeadCollider.enabled = true;
-                //boxCollider.enabled = true;
                 shieldCounter = 0;
-                //SoundManager.instance.PlaySound(draggingAroundTheGround);
                 if (currentEnergy > 74)
                     anim.SetBool("Taso1", true);
                 else
@@ -101,7 +93,6 @@ public class Etana : MonoBehaviour
             rb2d.bodyType = RigidbodyType2D.Dynamic;
             anim.SetBool("Dead", true);
         }
-
         if (currentEnergy <= 0)
         {
             dead = true;
@@ -109,7 +100,6 @@ public class Etana : MonoBehaviour
             spawnManager.GameOverOrWon();
         }
     }
-
     public void EnergybarLogic()
     {
         currentEnergy = Mathf.Clamp(currentEnergy, 0, maxEnergy);
@@ -127,14 +117,12 @@ public class Etana : MonoBehaviour
         if (currentEnergy <= 0)
             anim.SetTrigger("Die");
     }
-
     public void AddHealth(float health)
     {
         currentEnergy += health;
 
         EnergybarLogic();
     }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(!dead)
@@ -168,9 +156,7 @@ public class Etana : MonoBehaviour
                         Destroy(collision.gameObject);
                     }
                     else
-                    {
                         SoundManager.Instance.PlaySound(rockHitsShellSound);
-                    }
                 }
             }
             else
@@ -183,20 +169,16 @@ public class Etana : MonoBehaviour
                     StartCoroutine(HideRockHitsShellSprite());
                 }
                 if(collision.gameObject.CompareTag("Strawberry"))
-                {
                     SoundManager.Instance.PlaySound(rockHitsShellSound);
-                }
             }
         }
     }
-
     public IEnumerator Invulnerability()
     {
         Physics2D.IgnoreLayerCollision(6, 7, true);
         yield return new WaitForSeconds(2);
         Physics2D.IgnoreLayerCollision(6, 7, false);
     }
-
     IEnumerator HideRockHitsShellSprite()
     {
         yield return new WaitForSeconds(0.2f);
