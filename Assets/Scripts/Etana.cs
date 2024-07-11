@@ -1,19 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
-
 public class Etana : MonoBehaviour
 {
     Rigidbody2D rb2d;
     CircleCollider2D circleCollider;
     BoxCollider2D boxCollider;
     Animator anim;
-
     public ScoreManager scoreManager;
-
     public float startingEnergy = 100;
     public float maxEnergy = 100;
     public float chipSpeed = 2;
@@ -23,45 +18,38 @@ public class Etana : MonoBehaviour
     float fillF;
     float fillB;
     float hFraction;
-
     public bool ifHiding; // fetch from cursorController -script
     public GameObject cursorController;
     bool animationPlaysFetch; // fetch from CursorController -script
     public float energyLossPerSecond = 1;
     float shieldCounterMaxTime = 1;
     public float shieldCounter = 0;
-
     [SerializeField] GameObject rockHitsShell;
     SpriteRenderer rockHitsShellSprite;
     Animator rockHitsShellAnim;
-
     [SerializeField] Transform snailHead;
     CircleCollider2D snailHeadCollider;
-
     public bool dead = false;
-
     [SerializeField] AudioClip eatsStrawberry;
     [SerializeField] AudioClip rockHitsEtskuSound;
     [SerializeField] AudioClip rockHitsShellSound;
     [SerializeField] AudioClip draggingAroundTheGround;
-
+    [SerializeField] EndingScript endingScript;
+    [SerializeField] SpawnManager spawnManager;
     private void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
         circleCollider = GetComponent<CircleCollider2D>();
         boxCollider = GetComponent<BoxCollider2D>();
         anim = GetComponent<Animator>();
-
         startingEnergy = maxEnergy;
         currentEnergy = startingEnergy;
-
         rockHitsShellSprite = rockHitsShell.GetComponent<SpriteRenderer>();
         rockHitsShellAnim = rockHitsShell.GetComponent<Animator>();
-
         snailHeadCollider = snailHead.GetComponent<CircleCollider2D>();
         snailHeadCollider.enabled = true;
+        endingScript.GetComponent<EndingScript>();
     }
-
     private void Update()
     {
         ifHiding = cursorController.GetComponent<CursorController>().hideHead;
@@ -90,42 +78,22 @@ public class Etana : MonoBehaviour
                 //boxCollider.enabled = true;
                 shieldCounter = 0;
                 //SoundManager.instance.PlaySound(draggingAroundTheGround);
-
                 if (currentEnergy > 74)
-                {
                     anim.SetBool("Taso1", true);
-                }
                 else
-                {
                     anim.SetBool("Taso1", false);
-                }
-
                 if (currentEnergy < 75 && currentEnergy > 49)
-                {
                     anim.SetBool("Taso2", true);
-                }
                 else
-                {
                     anim.SetBool("Taso2", false);
-                }
-
                 if (currentEnergy < 50 && currentEnergy > 24)
-                {
                     anim.SetBool("Taso3", true);
-                }
                 else
-                {
                     anim.SetBool("Taso3", false);
-                }
-
                 if (currentEnergy < 25)
-                {
                     anim.SetBool("Taso4", true);
-                }
                 else
-                {
                     anim.SetBool("Taso4", false);
-                }
             }
         }
         else
@@ -137,6 +105,8 @@ public class Etana : MonoBehaviour
         if (currentEnergy <= 0)
         {
             dead = true;
+            endingScript.GameOverScreen();
+            spawnManager.GameOverOrWon();
         }
     }
 
@@ -191,7 +161,7 @@ public class Etana : MonoBehaviour
                         SoundManager.Instance.PlaySound(rockHitsEtskuSound);
                     }
                     TakeDamage(20);
-                    scoreManager.scoreCount -= 5;
+                    scoreManager.UpdateScore(-5);
                     StartCoroutine(Invulnerability());
                 }
 
@@ -206,7 +176,7 @@ public class Etana : MonoBehaviour
                             SoundManager.Instance.PlaySound(eatsStrawberry);
                         }
                         AddHealth(5);
-                        scoreManager.scoreCount += 5;
+                        scoreManager.UpdateScore(5);
                         Destroy(collision.gameObject);
                     }
                     else

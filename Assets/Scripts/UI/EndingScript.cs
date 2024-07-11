@@ -1,7 +1,6 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 public class EndingScript : MonoBehaviour
 {
     public Etana etana;
@@ -9,18 +8,24 @@ public class EndingScript : MonoBehaviour
     [SerializeField] Image endingBgImg;
     [SerializeField] ButtonB playAgainButton;
     [SerializeField] ButtonB backToMainMenuButton;
-    [SerializeField] GameObject endingText;
-    private void Update()
+    [SerializeField] GameObject gameOverText;
+    [SerializeField] GameObject gameWonText;
+    public void GameOverScreen()
     {
-        dead = etana.GetComponent<Etana>().dead;
-        if(dead)
-            StartCoroutine(EndingScreen());
+        StartCoroutine(EndingScreen(false));
     }
-    IEnumerator EndingScreen()
+    public void GameWonScreen()
+    {
+        StartCoroutine(EndingScreen(true));
+    }
+    IEnumerator EndingScreen(bool gameWon)
     {
         yield return new WaitForSeconds(2);
         endingBgImg.enabled = true;
-        endingText.SetActive(true);
+        if (gameWon)
+            gameWonText.SetActive(true);
+        else
+            gameOverText.SetActive(true);
         playAgainButton.gameObject.SetActive(true);
         backToMainMenuButton.gameObject.SetActive(true);
         InputManager.Instance.isEndingMenuOpen = true;
