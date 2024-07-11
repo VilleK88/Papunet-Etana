@@ -10,7 +10,7 @@ public class ScoreManager : MonoBehaviour
     {
         scoreCount += newScore;
         scoreText.text = scoreCount.ToString();
-        if(scoreCount >= 300)
+        if(scoreCount >= 20)
         {
             endingScript.GameWonScreen();
             spawnManager.GameOverOrWon();
