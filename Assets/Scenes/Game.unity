@@ -2240,7 +2240,7 @@ MonoBehaviour:
   rockHitsShellSound: {fileID: 8300000, guid: 21e8c55d97bada545954c900bda81472, type: 3}
   draggingAroundTheGround: {fileID: 8300000, guid: 9a9686ca7f2c3cb4baf8ea442986e0cf, type: 3}
   endingScript: {fileID: 339846567}
-  spawnManager: {fileID: 0}
+  spawnManager: {fileID: 1227002509}
 --- !u!61 &1081073523
 BoxCollider2D:
   m_ObjectHideFlags: 0

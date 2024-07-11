@@ -118,26 +118,14 @@ public class Etana : MonoBehaviour
         hFraction = currentEnergy / maxEnergy;
 
         if(fillB > hFraction)
-        {
             frontEnergybar.fillAmount = hFraction;
-        }
     }
-
     public void TakeDamage(float damage)
     {
         currentEnergy -= damage;
-
         EnergybarLogic();
-
-        if (currentEnergy > 0)
-        {
-            // Player hurt.
-        }
-        else
-        {
-            // Player dead.
+        if (currentEnergy <= 0)
             anim.SetTrigger("Die");
-        }
     }
 
     public void AddHealth(float health)
