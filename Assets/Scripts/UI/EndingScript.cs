@@ -1,37 +1,28 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-
+using TMPro;
 public class EndingScript : MonoBehaviour
 {
     public Etana etana;
     bool dead;
-
-    [SerializeField] GameObject whiteScreen;
-    [SerializeField] Button playAgainButton;
-
+    [SerializeField] Image endingBgImg;
+    [SerializeField] ButtonB playAgainButton;
+    [SerializeField] ButtonB backToMainMenuButton;
+    [SerializeField] GameObject endingText;
     private void Update()
     {
         dead = etana.GetComponent<Etana>().dead;
-
         if(dead)
-        {
             StartCoroutine(EndingScreen());
-        }
     }
-
     IEnumerator EndingScreen()
     {
         yield return new WaitForSeconds(2);
-        whiteScreen.SetActive(true);
+        endingBgImg.enabled = true;
+        endingText.SetActive(true);
         playAgainButton.gameObject.SetActive(true);
-
-    }
-
-    public void LoadGameAgain()
-    {
-        SceneManager.LoadScene("Game");
+        backToMainMenuButton.gameObject.SetActive(true);
+        InputManager.Instance.isEndingMenuOpen = true;
     }
 }
