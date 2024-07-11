@@ -22,6 +22,7 @@ public class EndingScript : MonoBehaviour
     IEnumerator EndingScreen(bool gameWon)
     {
         cursor.gameover = true;
+        DestroyRocksAndStrawberries();
         yield return new WaitForSeconds(2);
         endingBgImg.enabled = true;
         if (gameWon)
@@ -31,5 +32,14 @@ public class EndingScript : MonoBehaviour
         playAgainButton.gameObject.SetActive(true);
         backToMainMenuButton.gameObject.SetActive(true);
         InputManager.Instance.isEndingMenuOpen = true;
+    }
+    void DestroyRocksAndStrawberries()
+    {
+        GameObject[] rocks = GameObject.FindGameObjectsWithTag("Rock");
+        for (int i = 0; i < rocks.Length; i++)
+            Destroy(rocks[i]);
+        GameObject[] strawberries = GameObject.FindGameObjectsWithTag("Strawberry");
+        for (int i = 0; i < strawberries.Length; i++)
+            Destroy(strawberries[i]);
     }
 }
