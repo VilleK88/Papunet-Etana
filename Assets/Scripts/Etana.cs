@@ -35,6 +35,7 @@ public class Etana : MonoBehaviour
     [SerializeField] AudioClip draggingAroundTheGround;
     [SerializeField] EndingScript endingScript;
     [SerializeField] SpawnManager spawnManager;
+    bool dieOnlyOnce;
     private void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
@@ -87,17 +88,11 @@ public class Etana : MonoBehaviour
                 else
                     anim.SetBool("Taso4", false);
             }
-        }
-        else
-        {
-            rb2d.bodyType = RigidbodyType2D.Dynamic;
-            anim.SetBool("Dead", true);
-        }
-        if (currentEnergy <= 0)
-        {
-            dead = true;
-            endingScript.GameOverScreen();
-            spawnManager.GameOverOrWon();
+            if (currentEnergy <= 0 && !dieOnlyOnce)
+            {
+                dieOnlyOnce = true;
+                Die();
+            }
         }
     }
     public void EnergybarLogic()
@@ -114,8 +109,20 @@ public class Etana : MonoBehaviour
     {
         currentEnergy -= damage;
         EnergybarLogic();
-        if (currentEnergy <= 0)
-            anim.SetTrigger("Die");
+        if (currentEnergy <= 0 && !dieOnlyOnce)
+        {
+            dieOnlyOnce = true;
+            Die();
+        }
+    }
+    void Die()
+    {
+        dead = true;
+        anim.SetTrigger("Die");
+        endingScript.GameOverScreen();
+        spawnManager.GameOverOrWon();
+        rb2d.bodyType = RigidbodyType2D.Dynamic;
+        anim.SetBool("Dead", true);
     }
     public void AddHealth(float health)
     {

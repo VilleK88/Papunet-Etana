@@ -14,10 +14,12 @@ public class EndingScript : MonoBehaviour
     public void GameOverScreen()
     {
         StartCoroutine(EndingScreen(false));
+        Debug.Log("GameOver");
     }
     public void GameWonScreen()
     {
         StartCoroutine(EndingScreen(true));
+        Debug.Log("GameWon");
     }
     IEnumerator EndingScreen(bool gameWon)
     {
@@ -31,6 +33,7 @@ public class EndingScript : MonoBehaviour
             gameOverText.SetActive(true);
         playAgainButton.gameObject.SetActive(true);
         backToMainMenuButton.gameObject.SetActive(true);
+        InputManager.Instance.SelectFirstButton();
         InputManager.Instance.isEndingMenuOpen = true;
     }
     void DestroyRocksAndStrawberries()
