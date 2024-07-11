@@ -188,7 +188,7 @@ public class Etana : MonoBehaviour
                     if (!animationPlaysFetch)
                     {
                         anim.SetTrigger("Kivi");
-                        SoundManager.instance.PlaySound(rockHitsEtskuSound);
+                        SoundManager.Instance.PlaySound(rockHitsEtskuSound);
                     }
                     TakeDamage(20);
                     scoreManager.scoreCount -= 5;
@@ -203,7 +203,7 @@ public class Etana : MonoBehaviour
                         if (!animationPlaysFetch)
                         {
                             anim.SetTrigger("Mansikka");
-                            SoundManager.instance.PlaySound(eatsStrawberry);
+                            SoundManager.Instance.PlaySound(eatsStrawberry);
                         }
                         AddHealth(5);
                         scoreManager.scoreCount += 5;
@@ -211,7 +211,7 @@ public class Etana : MonoBehaviour
                     }
                     else
                     {
-                        SoundManager.instance.PlaySound(rockHitsShellSound);
+                        SoundManager.Instance.PlaySound(rockHitsShellSound);
                     }
                 }
             }
@@ -221,12 +221,12 @@ public class Etana : MonoBehaviour
                 {
                     rockHitsShellSprite.enabled = true;
                     rockHitsShellAnim.SetTrigger("RockHitsShell");
-                    SoundManager.instance.PlaySound(rockHitsShellSound);
+                    SoundManager.Instance.PlaySound(rockHitsShellSound);
                     StartCoroutine(HideRockHitsShellSprite());
                 }
                 if(collision.gameObject.CompareTag("Strawberry"))
                 {
-                    SoundManager.instance.PlaySound(rockHitsShellSound);
+                    SoundManager.Instance.PlaySound(rockHitsShellSound);
                 }
             }
         }

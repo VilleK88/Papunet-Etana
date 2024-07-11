@@ -1,58 +1,103 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-
-public class GuideButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class GuideButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, ISelectHandler, IDeselectHandler, IPointerClickHandler, ISubmitHandler
 {
     Button button;
-    Image buttonImage;
-    Sprite originalSprite;
+    [HideInInspector] public Image buttonImage;
+    [HideInInspector] public Sprite originalSprite;
     public Sprite hoverSprite;
     public GameObject speechBubble;
-
-    RectTransform buttonRect;
-    Vector2 localMousePosition;
-    public bool mouse_over = false;
-
+    [SerializeField] InputManager inputManager;
+    [SerializeField] CursorController cursor;
+    [SerializeField] GameObject guideScreen;
+    [SerializeField] GameObject transparentBG;
+    public bool guideScreenOpen;
+    [SerializeField] CloseGuideScreenButton closeGuideScreenButton;
+    [SerializeField] GameObject madeByScreen;
+    [SerializeField] MadeByButton madeByButton;
+    [SerializeField] GuideAudioButton guideAudioButton;
     void Start()
     {
         button = GetComponent<Button>();
-        buttonRect = GetComponent<RectTransform>();
         buttonImage = button.image;
         originalSprite = buttonImage.sprite;
+        closeGuideScreenButton.GetComponent<CloseGuideScreenButton>();
         speechBubble.gameObject.SetActive(false);
+        if (inputManager != null)
+            inputManager.GetComponent<InputManager>();
+        cursor.GetComponent<CursorController>();
+        if (madeByButton != null)
+            madeByButton.GetComponent<MadeByButton>();
+        if (guideAudioButton != null)
+            guideAudioButton.GetComponent<GuideAudioButton>();
     }
-
-    public void Update()
-    {
-        if (IsMouseOverButton())
-        {
-            buttonImage.sprite = hoverSprite;
-            speechBubble.gameObject.SetActive(true);
-
-        }
-        else
-        {
-            buttonImage.sprite = originalSprite;
-            speechBubble.gameObject.SetActive(false);
-        }
-    }
-
     public void OnPointerEnter(PointerEventData eventData)
     {
-        mouse_over = true;
-        Debug.Log("Mouse enter");
+        if (buttonImage != null)
+            buttonImage.sprite = hoverSprite;
+        cursor.ChangeCursor(cursor.cursorHover);
+        speechBubble.SetActive(true);
     }
-
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        madeByScreen.SetActive(false);
+        if (madeByButton.gameObject.activeSelf)
+            madeByButton.ButtonTextBackToNormal();
+        inputManager.keyboardInput = false;
+        guideScreen.SetActive(true);
+        transparentBG.SetActive(true);
+        guideScreenOpen = true;
+        closeGuideScreenButton.blackBG.SetActive(false);
+    }
     public void OnPointerExit(PointerEventData eventData)
     {
-        mouse_over = false;
-        Debug.Log("Mouse exit");
+        if (buttonImage != null)
+            buttonImage.sprite = originalSprite;
+        cursor.ChangeCursor(cursor.cursorOriginal);
+        speechBubble.SetActive(false);
     }
-
-    public bool IsMouseOverButton()
+    public void OnSelect(BaseEventData eventData)
     {
-        localMousePosition = buttonRect.InverseTransformPoint(Input.mousePosition);
-        return buttonRect.rect.Contains(localMousePosition);
+        if (buttonImage != null)
+            buttonImage.sprite = hoverSprite;
+        speechBubble.SetActive(true);
+    }
+    public void OnSubmit(BaseEventData eventData)
+    {
+        if (madeByScreen != null)
+        {
+            madeByScreen.SetActive(false);
+            if (madeByButton.gameObject.activeSelf)
+                madeByButton.ButtonTextBackToNormal();
+        }
+        inputManager.keyboardInput = true;
+        guideScreen.SetActive(true);
+        transparentBG.SetActive(true);
+        guideScreenOpen = true;
+        inputManager.SelectSecondGuideButton();
+    }
+    public void OnDeselect(BaseEventData eventData)
+    {
+        if (buttonImage != null)
+            buttonImage.sprite = originalSprite;
+        speechBubble.SetActive(false);
+    }
+    public void OpenGuideScreen()
+    {
+        guideScreen.SetActive(true);
+        guideScreenOpen = true;
+        inputManager.SelectSecondGuideButton();
+    }
+    public void CloseGuideScreen()
+    {
+        if (guideAudioButton.buttonImage != null)
+            guideAudioButton.buttonImage.sprite = guideAudioButton.originalSprite;
+        guideAudioButton.guideAudioOn = false;
+        guideScreen.SetActive(false);
+        transparentBG.SetActive(false);
+        guideScreenOpen = false;
+        SoundManager.Instance.source.Stop();
+        inputManager.keyboardInput = false;
     }
 }

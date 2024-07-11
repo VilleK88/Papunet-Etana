@@ -10,7 +10,7 @@ public class GroundCollision : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Rock") || collision.gameObject.CompareTag("Strawberry"))
         {
-            SoundManager.instance.PlaySound(rockandStrawberryBounceSound);
+            SoundManager.Instance.PlaySound(rockandStrawberryBounceSound);
         }
     }
 }

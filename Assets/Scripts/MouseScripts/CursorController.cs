@@ -4,12 +4,10 @@ using UnityEngine;
 public class CursorController : MonoBehaviour
 {
     CursorControls controls;
-    //public Texture2D cursor;
-    //public Texture2D cursorClicked;
     public Texture2D cursorOriginal;
     public Texture2D cursorHover;
     Camera mainCamera;
-    [SerializeField] GameObject etana;
+    [SerializeField] Etana etana;
     public bool hideHead = false;
     public bool animationPlaying;
     Ray ray;
@@ -31,7 +29,6 @@ public class CursorController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Confined;
         mainCamera = Camera.main;
     }
-
     private void OnEnable()
     {
         controls.Enable();
@@ -46,11 +43,14 @@ public class CursorController : MonoBehaviour
     {
         controls.Mouse.Click.started += _ => StartedClick();
         controls.Mouse.Click.performed += _ => EndedClick();
+        if (etana != null)
+            etana.GetComponent<Etana>();
     }
 
     private void Update()
     {
-        dead = etana.GetComponent<Etana>().dead;
+        if(etana != null)
+            dead = etana.dead;
         PreventUsingMouseAndKeyBoardInputAtTheSameTime();
         DetectObject();
     }
@@ -79,7 +79,7 @@ public class CursorController : MonoBehaviour
                     Input.GetKeyDown(KeyCode.Space)) && hideHead == false && !clickingCounter)
                 {
                     etana.GetComponent<Animator>().SetTrigger("HideHead");
-                    SoundManager.instance.PlaySound(whish);
+                    SoundManager.Instance.PlaySound(whish);
                     hideHead = true;
                     animationPlaying = true;
                     StartCoroutine(ClickCounter());
@@ -107,7 +107,7 @@ public class CursorController : MonoBehaviour
         clickingCounter = false;
     }
 
-    void ChangeCursor(Texture2D cursorType)
+    public void ChangeCursor(Texture2D cursorType)
     {
         Cursor.SetCursor(cursorType, Vector2.zero, CursorMode.Auto);
     }
