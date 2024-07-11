@@ -36,6 +36,7 @@ public class CursorController : MonoBehaviour
     }
     private void Update()
     {
+        EnterInput();
         DetectObject();
     }
     void StartedClick()
@@ -48,21 +49,28 @@ public class CursorController : MonoBehaviour
     public void DetectObject()
     {
         ray = mainCamera.ScreenPointToRay(controls.Mouse.Position.ReadValue<Vector2>());
-
         hits2D = Physics2D.GetRayIntersection(ray);
         if(hits2D.collider != null && !gameover)
         {
             if (hits2D.collider.gameObject.CompareTag("Player"))
             {
-                bool inputDown = Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Return);
-                if (inputDown && hideHead == false && !clickingCounter)
+                if (Input.GetMouseButtonDown(0) && hideHead == false && !clickingCounter)
                     HideHead();
-                else if (inputDown && hideHead && !clickingCounter)
+                else if (Input.GetMouseButtonDown(0) && hideHead && !clickingCounter)
                     StopHiding();
                 else
                     animationPlaying = false;
             }
         }
+    }
+    void EnterInput()
+    {
+        if (Input.GetKeyDown(KeyCode.Return) && hideHead == false && !clickingCounter)
+            HideHead();
+        else if (Input.GetKeyDown(KeyCode.Return) && hideHead && !clickingCounter)
+            StopHiding();
+        else
+            animationPlaying = false;
     }
     void HideHead()
     {
