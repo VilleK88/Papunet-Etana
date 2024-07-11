@@ -10,6 +10,7 @@ public class EndingScript : MonoBehaviour
     [SerializeField] ButtonB backToMainMenuButton;
     [SerializeField] GameObject gameOverText;
     [SerializeField] GameObject gameWonText;
+    [SerializeField] CursorController cursor;
     public void GameOverScreen()
     {
         StartCoroutine(EndingScreen(false));
@@ -20,6 +21,7 @@ public class EndingScript : MonoBehaviour
     }
     IEnumerator EndingScreen(bool gameWon)
     {
+        cursor.gameover = true;
         yield return new WaitForSeconds(2);
         endingBgImg.enabled = true;
         if (gameWon)

@@ -571,6 +571,7 @@ MonoBehaviour:
   backToMainMenuButton: {fileID: 2001731369}
   gameOverText: {fileID: 1115337702}
   gameWonText: {fileID: 693266355}
+  cursor: {fileID: 1241640673}
 --- !u!222 &339846568
 CanvasRenderer:
   m_ObjectHideFlags: 0
