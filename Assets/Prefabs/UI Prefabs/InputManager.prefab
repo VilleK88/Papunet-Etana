@@ -50,6 +50,16 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  guideButtons: []
+  guideButtons:
+  - {fileID: 0}
+  - {fileID: 0}
   isEndingMenuOpen: 0
+  playButton: {fileID: 0}
+  guideButton: {fileID: 0}
+  audioButton: {fileID: 0}
+  againButton: {fileID: 0}
+  exitButton: {fileID: 0}
+  guideAudioButton: {fileID: 0}
+  closeGuideScreenButton: {fileID: 0}
+  playAgainButton: {fileID: 0}
   keyboardInput: 0

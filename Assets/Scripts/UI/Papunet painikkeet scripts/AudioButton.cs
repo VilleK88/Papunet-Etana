@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class AudioButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class AudioButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, ISelectHandler, IDeselectHandler
 {
     Button button;
     Image buttonImage;
@@ -14,140 +12,93 @@ public class AudioButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     public GameObject soundOnSpeechBubble;
     public Sprite soundOffHoverSprite;
     public GameObject soundOffSpeechBubble;
-
-    public GameObject soundManager;
     bool isMutedFetch;
     bool soundOn = true;
-    public bool dontThrow = false;
-
-    RectTransform buttonRect;
-    Vector2 localMousePosition;
-    public bool mouse_over = false;
-
+    [SerializeField] InputManager inputManager;
+    [SerializeField] CursorController cursor;
     void Start()
     {
         button = GetComponent<Button>();
-        buttonRect = GetComponent<RectTransform>();
         buttonImage = button.image;
         soundOnOriginalSprite = buttonImage.sprite;
+        if (SoundManager.Instance.isMuted)
+            buttonImage.sprite = soundOffOriginalSprite;
         soundOnSpeechBubble.gameObject.SetActive(false);
+        if (inputManager != null)
+            inputManager.GetComponent<InputManager>();
+        cursor.GetComponent<CursorController>();
     }
-
-    public void Update()
-    {
-        isMutedFetch = soundManager.GetComponent<SoundManager>().isMuted;
-
-        if (!isMutedFetch)
-        {
-            soundOn = true;
-        }
-        else
-        {
-            soundOn = false;
-        }
-
-
-        if (mouse_over)
-        {
-            Debug.Log("Mouse Over");
-            if (soundOn)
-            {
-                soundOffSpeechBubble.gameObject.SetActive(false);
-
-                if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space))
-                {
-                    button.onClick.Invoke();
-                    dontThrow = true;
-                    buttonImage.sprite = soundOnHoverSprite;
-                    soundOnSpeechBubble.gameObject.SetActive(true);
-                }
-                else
-                {
-                    dontThrow = false;
-                    buttonImage.sprite = soundOnOriginalSprite;
-                    soundOnSpeechBubble.gameObject.SetActive(false);
-                }
-            }
-            else
-            {
-                if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space))
-                {
-                    button.onClick.Invoke();
-                    dontThrow = true;
-                    buttonImage.sprite = soundOffHoverSprite;
-                    soundOffSpeechBubble.gameObject.SetActive(true);
-                }
-                else
-                {
-                    dontThrow = false;
-                    buttonImage.sprite = soundOffOriginalSprite;
-                    soundOffSpeechBubble.gameObject.SetActive(false);
-                }
-            }
-
-            if (!soundOn)
-            {
-                soundOnSpeechBubble.gameObject.SetActive(false);
-            }
-        }
-
-
-        if (soundOn)
-        {
-            soundOffSpeechBubble.gameObject.SetActive(false);
-
-            if (IsMouseOverButton())
-            {
-                dontThrow = true;
-                buttonImage.sprite = soundOnHoverSprite;
-                soundOnSpeechBubble.gameObject.SetActive(true);
-
-            }
-            else
-            {
-                dontThrow = false;
-                buttonImage.sprite = soundOnOriginalSprite;
-                soundOnSpeechBubble.gameObject.SetActive(false);
-            }
-        }
-        else
-        {
-            if (IsMouseOverButton())
-            {
-                dontThrow = true;
-                buttonImage.sprite = soundOffHoverSprite;
-                soundOffSpeechBubble.gameObject.SetActive(true);
-
-            }
-            else
-            {
-                dontThrow = false;
-                buttonImage.sprite = soundOffOriginalSprite;
-                soundOffSpeechBubble.gameObject.SetActive(false);
-            }
-        }
-
-        if (!soundOn)
-        {
-            soundOnSpeechBubble.gameObject.SetActive(false);
-        }
-    }
-
     public void OnPointerEnter(PointerEventData eventData)
     {
-        mouse_over = true;
-        Debug.Log("Mouse enter");
+        if (!SoundManager.Instance.isMuted)
+        {
+            buttonImage.sprite = soundOnHoverSprite;
+            SoundOnSpeechBubble();
+        }
+        else
+        {
+            buttonImage.sprite = soundOffHoverSprite;
+            SoundOffSpeechBubble();
+        }
+        cursor.ChangeCursor(cursor.cursorHover);
     }
-
     public void OnPointerExit(PointerEventData eventData)
     {
-        mouse_over = false;
-        Debug.Log("Mouse exit");
+        if (!SoundManager.Instance.isMuted)
+            buttonImage.sprite = soundOnOriginalSprite;
+        else
+            buttonImage.sprite = soundOffOriginalSprite;
+        cursor.ChangeCursor(cursor.cursorOriginal);
+        soundOffSpeechBubble.SetActive(false);
+        soundOnSpeechBubble.SetActive(false);
     }
-
-    public bool IsMouseOverButton()
+    public void OnSelect(BaseEventData eventData)
     {
-        localMousePosition = buttonRect.InverseTransformPoint(Input.mousePosition);
-        return buttonRect.rect.Contains(localMousePosition);
+        if (!SoundManager.Instance.isMuted)
+        {
+            buttonImage.sprite = soundOnHoverSprite;
+            SoundOnSpeechBubble();
+        }
+        else
+        {
+            buttonImage.sprite = soundOffHoverSprite;
+            SoundOffSpeechBubble();
+        }
+    }
+    public void OnDeselect(BaseEventData eventData)
+    {
+        if (!SoundManager.Instance.isMuted)
+            buttonImage.sprite = soundOnOriginalSprite;
+        else
+            buttonImage.sprite = soundOffOriginalSprite;
+        soundOffSpeechBubble.SetActive(false);
+        soundOnSpeechBubble.SetActive(false);
+    }
+    public void ToggleSoundOnOrOff()
+    {
+        SoundManager.Instance.isMuted = !SoundManager.Instance.isMuted;
+        SoundManager.Instance.source.mute = SoundManager.Instance.isMuted;
+        PlayerPrefs.SetInt("isMuted", SoundManager.Instance.isMuted ? 1 : 0);
+        PlayerPrefs.Save();
+        if (!SoundManager.Instance.isMuted)
+        {
+            buttonImage.sprite = soundOnHoverSprite;
+            SoundOnSpeechBubble();
+        }
+        else
+        {
+            buttonImage.sprite = soundOffHoverSprite;
+            SoundOffSpeechBubble();
+        }
+    }
+    void SoundOnSpeechBubble()
+    {
+        soundOffSpeechBubble.SetActive(false);
+        soundOnSpeechBubble.SetActive(true);
+    }
+    void SoundOffSpeechBubble()
+    {
+        soundOffSpeechBubble.SetActive(true);
+        soundOnSpeechBubble.SetActive(false);
     }
 }

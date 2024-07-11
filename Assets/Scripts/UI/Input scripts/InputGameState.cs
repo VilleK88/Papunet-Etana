@@ -9,9 +9,9 @@ public class InputGameState : InputState
     public void UpdateState()
     {
         bool input = Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Tab);
-        /*if (manager.isEndingMenuOpen)
+        if (manager.isEndingMenuOpen)
             if (input)
-                manager.NavigateToNextButton();*/
+                manager.NavigateToNextButton();
     }
     public void EnterMenuState()
     {

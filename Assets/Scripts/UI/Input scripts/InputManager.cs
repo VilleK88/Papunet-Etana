@@ -24,34 +24,34 @@ public class InputManager : MonoBehaviour
     public Button[] guideButtons;
     private int currentButtonIndex = 0;
     public bool isEndingMenuOpen;
-    //[SerializeField] ButtonA playButton;
-    //[SerializeField] GuideButton guideButton;
-    //[SerializeField] ListenButton listenButton;
-    //[SerializeField] ButtonA againButton;
-    //[SerializeField] ButtonA exitButton;
-    //[SerializeField] GuideAudioButton guideAudioButton;
-    //[SerializeField] CloseGuideScreenButton closeGuideScreenButton;
-    //[SerializeField] ButtonB playAgainButton;
+    [SerializeField] ButtonB playButton;
+    [SerializeField] GuideButton guideButton;
+    [SerializeField] AudioButton audioButton;
+    [SerializeField] ButtonA againButton;
+    [SerializeField] ButtonA exitButton;
+    [SerializeField] GuideAudioButton guideAudioButton;
+    [SerializeField] CloseGuideScreenButton closeGuideScreenButton;
+    [SerializeField] ButtonB playAgainButton;
     public bool keyboardInput;
     private void Start()
     {
-        /*if (playButton != null)
-            playButton.GetComponent<ButtonA>();
+        if (playButton != null)
+            playButton.GetComponent<ButtonB>();
         guideButton.GetComponent<GuideButton>();
-        listenButton.GetComponent<ListenButton>();
+        audioButton.GetComponent<AudioButton>();
         againButton.GetComponent<ButtonA>();
         exitButton.GetComponent<ButtonA>();
         guideAudioButton.GetComponent<GuideAudioButton>();
         closeGuideScreenButton.GetComponent<CloseGuideScreenButton>();
         if (playAgainButton != null)
-            playAgainButton.GetComponent<ButtonB>();*/
+            playAgainButton.GetComponent<ButtonB>();
         string sceneName = SceneManager.GetActiveScene().name;
         if (sceneName == "MainMenu")
         {
             SelectFirstButton();
             currentInputState = inputMenuState;
         }
-        else if (sceneName == "Dart")
+        else if (sceneName == "Game")
             currentInputState = inputGameState;
     }
     private void Update()
@@ -69,7 +69,7 @@ public class InputManager : MonoBehaviour
     }
     public void NavigateToNextButton()
     {
-        /*if (!guideButton.guideScreenOpen)
+        if (!guideButton.guideScreenOpen)
         {
             currentButtonIndex++;
             if (currentButtonIndex >= buttons.Length)
@@ -82,11 +82,11 @@ public class InputManager : MonoBehaviour
             if (currentButtonIndex >= guideButtons.Length)
                 currentButtonIndex = 0;
             EventSystem.current.SetSelectedGameObject(guideButtons[currentButtonIndex].gameObject);
-        }*/
+        }
     }
     public void SelectPlayAgainButton()
     {
-        //playAgainButton.blackBG.SetActive(true);
+        playAgainButton.blackBG.SetActive(true);
     }
     public void AgainButtonFunction()
     {
@@ -98,7 +98,7 @@ public class InputManager : MonoBehaviour
     }
     public void StartGame()
     {
-        SceneManager.LoadScene("Dart");
+        SceneManager.LoadScene("Game");
     }
     public void GoBackToMainMenu()
     {

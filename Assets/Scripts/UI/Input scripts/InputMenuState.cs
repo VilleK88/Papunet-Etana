@@ -9,8 +9,8 @@ public class InputMenuState : InputState
     public void UpdateState()
     {
         bool input = Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Tab);
-        /*if (input)
-            manager.NavigateToNextButton();*/
+        if (input)
+            manager.NavigateToNextButton();
     }
     public void EnterMenuState()
     {
