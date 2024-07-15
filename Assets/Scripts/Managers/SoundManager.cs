@@ -10,6 +10,8 @@ public class SoundManager : MonoBehaviour
         else
             Instance = this;
         source = GetComponent<AudioSource>();
+        isMuted = PlayerPrefs.GetInt("isMuted", 0) == 1;
+        source.mute = isMuted;
     }
     #endregion
     [HideInInspector] public AudioSource source;
