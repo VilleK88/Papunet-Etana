@@ -456,6 +456,18 @@ PrefabInstance:
       propertyPath: soundManager
       value: 
       objectReference: {fileID: 506254076}
+    - target: {fileID: 2710208598520225140, guid: e970aaadf301a9b4c83eab3c43022f87, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 916439966}
+    - target: {fileID: 2710208598520225140, guid: e970aaadf301a9b4c83eab3c43022f87, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GoBackToMainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 2710208598520225140, guid: e970aaadf301a9b4c83eab3c43022f87, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: InputManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 2710208598520225143, guid: e970aaadf301a9b4c83eab3c43022f87, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
