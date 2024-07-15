@@ -11,6 +11,9 @@ public class EndingScript : MonoBehaviour
     [SerializeField] GameObject gameOverText;
     [SerializeField] GameObject gameWonText;
     [SerializeField] CursorController cursor;
+    [SerializeField] MoveLeft moveLeftBG;
+    [SerializeField] MoveLeft moveLeftGroundEtanaGoesFront;
+    [SerializeField] MoveLeft moveLeftGroundEtanaGoesBack;
     public void GameOverScreen()
     {
         StartCoroutine(EndingScreen(false));
@@ -24,8 +27,11 @@ public class EndingScript : MonoBehaviour
     IEnumerator EndingScreen(bool gameWon)
     {
         cursor.gameover = true;
+        yield return new WaitForSeconds(2f);
         DestroyRocksAndStrawberries();
-        yield return new WaitForSeconds(2);
+        moveLeftBG.stopMovingBG = true;
+        moveLeftGroundEtanaGoesFront.stopMovingBG = true;
+        moveLeftGroundEtanaGoesBack.stopMovingBG = true;
         endingBgImg.enabled = true;
         if (gameWon)
             gameWonText.SetActive(true);

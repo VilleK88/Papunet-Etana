@@ -235,6 +235,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   etana: {fileID: 1081073522}
+  stopMovingBG: 0
 --- !u!61 &232542563
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -584,6 +585,9 @@ MonoBehaviour:
   gameOverText: {fileID: 1115337702}
   gameWonText: {fileID: 693266355}
   cursor: {fileID: 1241640673}
+  moveLeftBG: {fileID: 232542562}
+  moveLeftGroundEtanaGoesFront: {fileID: 1220441563}
+  moveLeftGroundEtanaGoesBack: {fileID: 730058227}
 --- !u!222 &339846568
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1739,6 +1743,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   etana: {fileID: 1081073522}
+  stopMovingBG: 0
 --- !u!114 &730058230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2248,6 +2253,7 @@ MonoBehaviour:
   rockHitsShell: {fileID: 823672679}
   snailHead: {fileID: 2033782740}
   dead: 0
+  won: 0
   eatsStrawberry: {fileID: 8300000, guid: 8cdab6105cfc3064f9d8a16cd1a1996a, type: 3}
   rockHitsEtskuSound: {fileID: 8300000, guid: b0d8f71b37e5f0f438223ea8301268eb, type: 3}
   rockHitsShellSound: {fileID: 8300000, guid: 21e8c55d97bada545954c900bda81472, type: 3}
@@ -2713,6 +2719,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   etana: {fileID: 1081073522}
+  stopMovingBG: 0
 --- !u!61 &1220441564
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3468,6 +3475,7 @@ MonoBehaviour:
   scoreText: {fileID: 1786895117}
   endingScript: {fileID: 339846567}
   spawnManager: {fileID: 1227002509}
+  etana: {fileID: 1081073522}
 --- !u!4 &2128868363
 Transform:
   m_ObjectHideFlags: 0

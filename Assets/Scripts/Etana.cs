@@ -29,6 +29,7 @@ public class Etana : MonoBehaviour
     [SerializeField] Transform snailHead;
     CircleCollider2D snailHeadCollider;
     public bool dead = false;
+    public bool won = false;
     [SerializeField] AudioClip eatsStrawberry;
     [SerializeField] AudioClip rockHitsEtskuSound;
     [SerializeField] AudioClip rockHitsShellSound;
@@ -54,7 +55,7 @@ public class Etana : MonoBehaviour
     {
         ifHiding = cursorController.GetComponent<CursorController>().hideHead;
         animationPlaysFetch = cursorController.GetComponent<CursorController>().animationPlaying;
-        if(!dead)
+        if(!dead && !won)
         {
             if (ifHiding)
             {
@@ -124,10 +125,22 @@ public class Etana : MonoBehaviour
         rb2d.bodyType = RigidbodyType2D.Dynamic;
         anim.SetBool("Dead", true);
     }
+    public void GameWon()
+    {
+        won = true;
+        StartCoroutine(StopAnimations(2f));
+    }
+    IEnumerator StopAnimations(float time)
+    {
+        yield return new WaitForSeconds(time);
+        anim.SetBool("Taso1", false);
+        anim.SetBool("Taso2", false);
+        anim.SetBool("Taso3", false);
+        anim.SetBool("Taso4", false);
+    }
     public void AddHealth(float health)
     {
         currentEnergy += health;
-
         EnergybarLogic();
     }
     private void OnCollisionEnter2D(Collision2D collision)

@@ -6,14 +6,16 @@ public class ScoreManager : MonoBehaviour
     public TextMeshProUGUI scoreText;
     [SerializeField] EndingScript endingScript;
     [SerializeField] SpawnManager spawnManager;
+    [SerializeField] Etana etana;
     public void UpdateScore(int newScore)
     {
         scoreCount += newScore;
         scoreText.text = scoreCount.ToString();
-        if(scoreCount >= 20)
+        if(scoreCount >= 5)
         {
             endingScript.GameWonScreen();
             spawnManager.GameOverOrWon();
+            etana.GameWon();
         }
     }
 }

@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 public class MoveLeft : MonoBehaviour
 {
@@ -6,19 +7,21 @@ public class MoveLeft : MonoBehaviour
     float counter = 0;
     [SerializeField] Etana etana;
     bool ifHiding; // fetch from Etana -script
-    bool dead;
+    public bool stopMovingBG;
     private void Update()
     {
         ifHiding = etana.GetComponent<Etana>().ifHiding;
-        dead = etana.GetComponent<Etana>().dead;
-        if(!ifHiding)
+        if(!stopMovingBG)
         {
-            if(maxTime > counter)
-                counter += Time.deltaTime;
-            else if(!dead)
-                transform.Translate(Vector2.left * speed * Time.deltaTime);
+            if (!ifHiding)
+            {
+                if (maxTime > counter)
+                    counter += Time.deltaTime;
+                else
+                    transform.Translate(Vector2.left * speed * Time.deltaTime);
+            }
+            else
+                counter = 0;
         }
-        else
-            counter = 0;
     }
 }
