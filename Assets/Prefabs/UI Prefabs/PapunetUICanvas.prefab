@@ -427,7 +427,7 @@ MonoBehaviour:
   stopPlaySprite: {fileID: 21300000, guid: 43819395ba5e8f641b79e97337a2784e, type: 3}
   inputManager: {fileID: 0}
   cursor: {fileID: 0}
-  guideAudioClip: {fileID: 8300000, guid: 65cfc06ff8e778d4bb47187d5e050b05, type: 3}
+  guideAudioClip: {fileID: 8300000, guid: 18bfe7529f36e8740ac9a2faaf83cb41, type: 3}
   guideAudioOn: 0
 --- !u!1 &723478725
 GameObject:
