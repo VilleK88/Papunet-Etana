@@ -151,14 +151,18 @@ public class Etana : MonoBehaviour
             {
                 if (collision.gameObject.CompareTag("Rock"))
                 {
-                    if (!animationPlaysFetch)
+                    if (collision.contacts.Length > 0 && collision.contacts[0].otherCollider.transform.
+                        IsChildOf(snailHead))
                     {
-                        anim.SetTrigger("Kivi");
-                        SoundManager.Instance.PlaySound(rockHitsEtskuSound);
+                        if (!animationPlaysFetch)
+                        {
+                            anim.SetTrigger("Kivi");
+                            SoundManager.Instance.PlaySound(rockHitsEtskuSound);
+                        }
+                        TakeDamage(20);
+                        scoreManager.UpdateScore(-5);
+                        StartCoroutine(Invulnerability());
                     }
-                    TakeDamage(20);
-                    scoreManager.UpdateScore(-5);
-                    StartCoroutine(Invulnerability());
                 }
 
                 if (collision.gameObject.CompareTag("Strawberry"))
