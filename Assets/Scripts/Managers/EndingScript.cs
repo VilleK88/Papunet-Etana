@@ -14,6 +14,7 @@ public class EndingScript : MonoBehaviour
     [SerializeField] MoveLeft moveLeftBG;
     [SerializeField] MoveLeft moveLeftGroundEtanaGoesFront;
     [SerializeField] MoveLeft moveLeftGroundEtanaGoesBack;
+    [SerializeField] PostProcessing postProcessing;
     public void GameOverScreen()
     {
         StartCoroutine(EndingScreen(false));
@@ -41,6 +42,7 @@ public class EndingScript : MonoBehaviour
         backToMainMenuButton.gameObject.SetActive(true);
         InputManager.Instance.SelectFirstButton();
         InputManager.Instance.isEndingMenuOpen = true;
+        postProcessing.BlurBG();
     }
     void DestroyRocksAndStrawberries()
     {
