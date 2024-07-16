@@ -145,6 +145,8 @@ public class Etana : MonoBehaviour
     public void AddHealth(float health)
     {
         currentEnergy += health;
+        if (currentEnergy > maxEnergy)
+            currentEnergy = maxEnergy;
         EnergybarLogic();
     }
     private void OnCollisionEnter2D(Collision2D collision)
