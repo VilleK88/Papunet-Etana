@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 public class MoveLeft : MonoBehaviour
 {
-    float speed = 2.0f;
+    float speed = 2.0f; // 2.0f original
     float maxTime = 0.5f;
     float counter = 0;
     [SerializeField] Etana etana;
