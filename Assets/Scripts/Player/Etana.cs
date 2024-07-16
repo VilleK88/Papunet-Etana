@@ -102,8 +102,12 @@ public class Etana : MonoBehaviour
         fillF = frontEnergybar.fillAmount;
         fillB = backEnergybar.fillAmount;
         hFraction = currentEnergy / maxEnergy;
-
-        if(fillB > hFraction)
+        if (fillB > hFraction)
+        {
+            backEnergybar.fillAmount = hFraction;
+            frontEnergybar.fillAmount = hFraction;
+        }
+        else if (fillF < hFraction)
             frontEnergybar.fillAmount = hFraction;
     }
     public void TakeDamage(float damage)
