@@ -1884,8 +1884,8 @@ MonoBehaviour:
   gameWonText: {fileID: 869626272}
   cursor: {fileID: 1241640673}
   moveLeftBG: {fileID: 232542562}
-  moveLeftGroundEtanaGoesFront: {fileID: 0}
-  moveLeftGroundEtanaGoesBack: {fileID: 0}
+  moveLeftGroundEtanaGoesFront: {fileID: 840052001}
+  moveLeftGroundEtanaGoesBack: {fileID: 1272693242}
   transparentBG: {fileID: 581036193}
 --- !u!222 &708919765
 CanvasRenderer:
