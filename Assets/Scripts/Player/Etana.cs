@@ -97,17 +97,10 @@ public class Etana : MonoBehaviour
     }
     public void EnergybarLogic()
     {
-        currentEnergy = Mathf.Clamp(currentEnergy, 0, maxEnergy);
-        fillF = frontEnergybar.fillAmount;
-        fillB = backEnergybar.fillAmount;
-        hFraction = currentEnergy / maxEnergy;
-        if (fillB > hFraction)
-        {
-            backEnergybar.fillAmount = hFraction;
-            frontEnergybar.fillAmount = hFraction;
-        }
-        else if (fillF < hFraction)
-            frontEnergybar.fillAmount = hFraction;
+        if (currentEnergy < 0)
+            currentEnergy = 0;
+        fillF = currentEnergy / maxEnergy;
+        frontEnergybar.fillAmount = fillF;
     }
     public void AddHealth(float health)
     {
@@ -118,12 +111,12 @@ public class Etana : MonoBehaviour
     }
     public void TakeDamage(float damage)
     {
-        currentEnergy -= damage;
-        EnergybarLogic();
-        if (currentEnergy <= 0 && !dieOnlyOnce)
+        if(currentEnergy > 0)
         {
-            dieOnlyOnce = true;
-            Die();
+            currentEnergy -= damage;
+            EnergybarLogic();
+            if (currentEnergy <= 0)
+                Die();
         }
     }
     void Die()
