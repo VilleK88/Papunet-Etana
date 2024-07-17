@@ -2799,10 +2799,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreManager: {fileID: 2128868362}
-  startingEnergy: 100
   maxEnergy: 100
-  chipSpeed: 2
   currentEnergy: 0
+  chipSpeed: 2
   frontEnergybar: {fileID: 1178916218}
   backEnergybar: {fileID: 404080800}
   ifHiding: 0

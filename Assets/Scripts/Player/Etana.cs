@@ -8,10 +8,10 @@ public class Etana : MonoBehaviour
     BoxCollider2D boxCollider;
     Animator anim;
     public ScoreManager scoreManager;
-    public float startingEnergy = 100;
+    //public float startingEnergy = 0;
     public float maxEnergy = 100;
-    public float chipSpeed = 2;
     public float currentEnergy;
+    public float chipSpeed = 2;
     [SerializeField] Image frontEnergybar;
     [SerializeField] Image backEnergybar;
     float fillF;
@@ -39,12 +39,12 @@ public class Etana : MonoBehaviour
     bool dieOnlyOnce;
     private void Start()
     {
+        currentEnergy = maxEnergy;
         rb2d = GetComponent<Rigidbody2D>();
         circleCollider = GetComponent<CircleCollider2D>();
         boxCollider = GetComponent<BoxCollider2D>();
         anim = GetComponent<Animator>();
-        startingEnergy = maxEnergy;
-        currentEnergy = startingEnergy;
+        currentEnergy = maxEnergy;
         rockHitsShellSprite = rockHitsShell.GetComponent<SpriteRenderer>();
         rockHitsShellAnim = rockHitsShell.GetComponent<Animator>();
         snailHeadCollider = snailHead.GetComponent<CircleCollider2D>();
@@ -110,6 +110,13 @@ public class Etana : MonoBehaviour
         else if (fillF < hFraction)
             frontEnergybar.fillAmount = hFraction;
     }
+    public void AddHealth(float health)
+    {
+        currentEnergy += health;
+        if (currentEnergy > maxEnergy)
+            currentEnergy = maxEnergy;
+        EnergybarLogic();
+    }
     public void TakeDamage(float damage)
     {
         currentEnergy -= damage;
@@ -141,13 +148,6 @@ public class Etana : MonoBehaviour
         anim.SetBool("Taso2", false);
         anim.SetBool("Taso3", false);
         anim.SetBool("Taso4", false);
-    }
-    public void AddHealth(float health)
-    {
-        currentEnergy += health;
-        if (currentEnergy > maxEnergy)
-            currentEnergy = maxEnergy;
-        EnergybarLogic();
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
