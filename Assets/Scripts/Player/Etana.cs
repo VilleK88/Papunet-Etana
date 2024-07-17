@@ -8,7 +8,6 @@ public class Etana : MonoBehaviour
     BoxCollider2D boxCollider;
     Animator anim;
     public ScoreManager scoreManager;
-    //public float startingEnergy = 0;
     public float maxEnergy = 100;
     public float currentEnergy;
     public float chipSpeed = 2;
