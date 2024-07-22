@@ -82,7 +82,7 @@ public class CursorController : MonoBehaviour
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
-            if (touch.phase == TouchPhase.Began)
+            if (touch.phase == TouchPhase.Ended)
             {
                 ray = mainCamera.ScreenPointToRay(touch.position);
                 hits2D = Physics2D.GetRayIntersection(ray);
