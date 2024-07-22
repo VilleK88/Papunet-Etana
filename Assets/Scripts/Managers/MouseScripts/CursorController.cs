@@ -33,13 +33,15 @@ public class CursorController : MonoBehaviour
     {
         controls.Mouse.Click.started += _ => StartedClick();
         controls.Mouse.Click.performed += _ => EndedClick();
+        controls.Touch.Press.started += _ => StartedClick();
+        controls.Touch.Press.performed += _ => EndedClick();
     }
     private void Update()
     {
         if(etana != null)
         {
             EnterInput();
-            DetectObject();
+            TouchInput();
         }
     }
     void StartedClick()
@@ -53,13 +55,13 @@ public class CursorController : MonoBehaviour
     {
         ray = mainCamera.ScreenPointToRay(controls.Mouse.Position.ReadValue<Vector2>());
         hits2D = Physics2D.GetRayIntersection(ray);
-        if(hits2D.collider != null && !gameover)
+        if (hits2D.collider != null && !gameover)
         {
             if (hits2D.collider.gameObject.CompareTag("Player"))
             {
-                if (Input.GetMouseButtonDown(0) && hideHead == false && !clickingCounter)
+                if (!hideHead&& !clickingCounter)
                     HideHead();
-                else if (Input.GetMouseButtonDown(0) && hideHead && !clickingCounter)
+                else if (hideHead && !clickingCounter)
                     StopHiding();
                 else
                     animationPlaying = false;
@@ -74,6 +76,30 @@ public class CursorController : MonoBehaviour
             StopHiding();
         else
             animationPlaying = false;
+    }
+    void TouchInput()
+    {
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+            if (touch.phase == TouchPhase.Began)
+            {
+                ray = mainCamera.ScreenPointToRay(touch.position);
+                hits2D = Physics2D.GetRayIntersection(ray);
+                if (hits2D.collider != null && !gameover)
+                {
+                    if (hits2D.collider.gameObject.CompareTag("Player"))
+                    {
+                        if (hideHead == false && !clickingCounter)
+                            HideHead();
+                        else if (hideHead && !clickingCounter)
+                            StopHiding();
+                        else
+                            animationPlaying = false;
+                    }
+                }
+            }
+        }
     }
     void HideHead()
     {
