@@ -98,6 +98,7 @@ public class InputManager : MonoBehaviour
     }
     public void StartGame()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("Game");
     }
     public void GoBackToMainMenu()

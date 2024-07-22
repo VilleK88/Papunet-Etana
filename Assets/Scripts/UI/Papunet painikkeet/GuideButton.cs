@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 public class GuideButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, ISelectHandler, IDeselectHandler, IPointerClickHandler, ISubmitHandler
 {
     Button button;
@@ -17,6 +18,7 @@ public class GuideButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     [SerializeField] GameObject madeByScreen;
     [SerializeField] MadeByButton madeByButton;
     [SerializeField] GuideAudioButton guideAudioButton;
+    string currentScene;
     void Start()
     {
         button = GetComponent<Button>();
@@ -31,6 +33,7 @@ public class GuideButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
             madeByButton.GetComponent<MadeByButton>();
         if (guideAudioButton != null)
             guideAudioButton.GetComponent<GuideAudioButton>();
+        currentScene = SceneManager.GetActiveScene().name;
     }
     public void OnPointerEnter(PointerEventData eventData)
     {
@@ -45,9 +48,7 @@ public class GuideButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         if (madeByButton.gameObject.activeSelf)
             madeByButton.ButtonTextBackToNormal();
         inputManager.keyboardInput = false;
-        guideScreen.SetActive(true);
-        transparentBG.SetActive(true);
-        guideScreenOpen = true;
+        OpenGuideScreen();
         closeGuideScreenButton.blackBG.SetActive(false);
     }
     public void OnPointerExit(PointerEventData eventData)
@@ -72,10 +73,7 @@ public class GuideButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
                 madeByButton.ButtonTextBackToNormal();
         }
         inputManager.keyboardInput = true;
-        guideScreen.SetActive(true);
-        transparentBG.SetActive(true);
-        guideScreenOpen = true;
-        inputManager.SelectSecondGuideButton();
+        OpenGuideScreen();
     }
     public void OnDeselect(BaseEventData eventData)
     {
@@ -86,8 +84,11 @@ public class GuideButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     public void OpenGuideScreen()
     {
         guideScreen.SetActive(true);
+        transparentBG.SetActive(true);
         guideScreenOpen = true;
         inputManager.SelectSecondGuideButton();
+        if (currentScene == "Game")
+            PauseGame();
     }
     public void CloseGuideScreen()
     {
@@ -99,5 +100,15 @@ public class GuideButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         guideScreenOpen = false;
         SoundManager.Instance.source.Stop();
         inputManager.keyboardInput = false;
+        if (currentScene == "Game")
+            ContinueGame();
+    }
+    public void PauseGame()
+    {
+        Time.timeScale = 0;
+    }
+    public void ContinueGame()
+    {
+        Time.timeScale = 1;
     }
 }

@@ -448,6 +448,10 @@ PrefabInstance:
       propertyPath: inputManager
       value: 
       objectReference: {fileID: 916439966}
+    - target: {fileID: 469805657, guid: e970aaadf301a9b4c83eab3c43022f87, type: 3}
+      propertyPath: newButton
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1355966063, guid: e970aaadf301a9b4c83eab3c43022f87, type: 3}
       propertyPath: cursor
       value: 
@@ -460,6 +464,10 @@ PrefabInstance:
       propertyPath: cursor
       value: 
       objectReference: {fileID: 1241640673}
+    - target: {fileID: 1355966064, guid: e970aaadf301a9b4c83eab3c43022f87, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1355966064, guid: e970aaadf301a9b4c83eab3c43022f87, type: 3}
       propertyPath: inputManager
       value: 
@@ -2836,7 +2844,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.4416666, y: 3.3583333}
+    oldSize: {x: 4.0916667, y: 3.3}
     newSize: {x: 4.0916667, y: 3.3}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
