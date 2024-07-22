@@ -33,15 +33,15 @@ public class CursorController : MonoBehaviour
     {
         controls.Mouse.Click.started += _ => StartedClick();
         controls.Mouse.Click.performed += _ => EndedClick();
-        controls.Touch.Press.started += _ => StartedClick();
-        controls.Touch.Press.performed += _ => EndedClick();
+        controls.Touch.Press.started += _ => StartedTouch();
+        controls.Touch.Press.performed += _ => EndedTouch();
     }
     private void Update()
     {
         if(etana != null)
         {
             EnterInput();
-            TouchInput();
+            //TouchInput();
         }
     }
     void StartedClick()
@@ -50,6 +50,14 @@ public class CursorController : MonoBehaviour
     void EndedClick()
     {
         DetectObject();
+    }
+    void StartedTouch()
+    {
+
+    }
+    void EndedTouch()
+    {
+        TouchInput();
     }
     public void DetectObject()
     {
