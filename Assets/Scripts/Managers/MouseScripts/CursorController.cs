@@ -110,7 +110,6 @@ public class CursorController : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         clickingCounter = false;
     }
-
     public void ChangeCursor(Texture2D cursorType)
     {
         Cursor.SetCursor(cursorType, Vector2.zero, CursorMode.Auto);
