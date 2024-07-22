@@ -8,7 +8,6 @@ public class CursorController : MonoBehaviour
     Camera mainCamera;
     [SerializeField] Etana etana;
     public bool hideHead = false;
-    public bool animationPlaying;
     Ray ray;
     RaycastHit2D hits2D;
     bool clickingCounter = false; // to prevent animation freezing
@@ -31,33 +30,22 @@ public class CursorController : MonoBehaviour
     }
     private void Start()
     {
-        controls.Mouse.Click.started += _ => StartedClick();
         controls.Mouse.Click.performed += _ => EndedClick();
-        controls.Touch.Press.started += _ => StartedTouch();
         controls.Touch.Press.performed += _ => EndedTouch();
-    }
-    private void Update()
-    {
-        if(etana != null)
-        {
-            EnterInput();
-            //TouchInput();
-        }
-    }
-    void StartedClick()
-    {
+        if (etana != null)
+            controls.Keyboard.PressEnter.performed += _ => EndedPressEnter();
     }
     void EndedClick()
     {
         DetectObject();
     }
-    void StartedTouch()
-    {
-
-    }
     void EndedTouch()
     {
         TouchInput();
+    }
+    void EndedPressEnter()
+    {
+        EnterInput();
     }
     public void DetectObject()
     {
@@ -71,19 +59,15 @@ public class CursorController : MonoBehaviour
                     HideHead();
                 else if (hideHead && !clickingCounter)
                     StopHiding();
-                else
-                    animationPlaying = false;
             }
         }
     }
     void EnterInput()
     {
-        if (Input.GetKeyDown(KeyCode.Return) && hideHead == false && !clickingCounter)
+        if (!hideHead&& !clickingCounter)
             HideHead();
-        else if (Input.GetKeyDown(KeyCode.Return) && hideHead && !clickingCounter)
+        else if (hideHead && !clickingCounter)
             StopHiding();
-        else
-            animationPlaying = false;
     }
     void TouchInput()
     {
@@ -102,8 +86,6 @@ public class CursorController : MonoBehaviour
                             HideHead();
                         else if (hideHead && !clickingCounter)
                             StopHiding();
-                        else
-                            animationPlaying = false;
                     }
                 }
             }
@@ -114,14 +96,12 @@ public class CursorController : MonoBehaviour
         etana.GetComponent<Animator>().SetTrigger("HideHead");
         SoundManager.Instance.PlaySound(whish);
         hideHead = true;
-        animationPlaying = true;
         StartCoroutine(ClickCounter());
     }
     void StopHiding()
     {
         etana.GetComponent<Animator>().SetTrigger("StopHiding");
         hideHead = false;
-        animationPlaying = true;
         StartCoroutine(ClickCounter());
     }
     IEnumerator ClickCounter()

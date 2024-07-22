@@ -18,7 +18,6 @@ public class Etana : MonoBehaviour
     float hFraction;
     public bool ifHiding; // fetch from cursorController -script
     public GameObject cursorController;
-    bool animationPlaysFetch; // fetch from CursorController -script
     public float energyLossPerSecond = 1;
     float shieldCounterMaxTime = 1;
     public float shieldCounter = 0;
@@ -53,7 +52,6 @@ public class Etana : MonoBehaviour
     private void Update()
     {
         ifHiding = cursorController.GetComponent<CursorController>().hideHead;
-        animationPlaysFetch = cursorController.GetComponent<CursorController>().animationPlaying;
         if(!dead && !won)
         {
             if (ifHiding)
@@ -152,11 +150,8 @@ public class Etana : MonoBehaviour
                     if (collision.contacts.Length > 0 && collision.contacts[0].otherCollider.transform.
                         IsChildOf(snailHead))
                     {
-                        if (!animationPlaysFetch)
-                        {
-                            anim.SetTrigger("Kivi");
-                            SoundManager.Instance.PlaySound(rockHitsEtskuSound);
-                        }
+                        anim.SetTrigger("Kivi");
+                        SoundManager.Instance.PlaySound(rockHitsEtskuSound);
                         TakeDamage(20);
                         scoreManager.UpdateScore(-5);
                         StartCoroutine(Invulnerability());
@@ -168,11 +163,8 @@ public class Etana : MonoBehaviour
                     if (collision.contacts.Length > 0 && collision.contacts[0].otherCollider.transform.
                         IsChildOf(snailHead))
                     {
-                        if (!animationPlaysFetch)
-                        {
-                            anim.SetTrigger("Mansikka");
-                            SoundManager.Instance.PlaySound(eatsStrawberry);
-                        }
+                        anim.SetTrigger("Mansikka");
+                        SoundManager.Instance.PlaySound(eatsStrawberry);
                         AddHealth(5);
                         scoreManager.UpdateScore(5);
                         Destroy(collision.gameObject);

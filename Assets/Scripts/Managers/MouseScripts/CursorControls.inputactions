@@ -76,6 +76,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Keyboard",
+            "id": "9a3a4fe8-ddd0-46f5-b742-372b35c07135",
+            "actions": [
+                {
+                    "name": "PressEnter",
+                    "type": "Button",
+                    "id": "b0c8fb76-afc2-49bc-9981-aa4557ec0a7f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "1e290353-f7db-46cd-aa77-1360daa3d811",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PressEnter",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

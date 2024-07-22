@@ -98,6 +98,34 @@ public partial class @CursorControls: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Keyboard"",
+            ""id"": ""9a3a4fe8-ddd0-46f5-b742-372b35c07135"",
+            ""actions"": [
+                {
+                    ""name"": ""PressEnter"",
+                    ""type"": ""Button"",
+                    ""id"": ""b0c8fb76-afc2-49bc-9981-aa4557ec0a7f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""1e290353-f7db-46cd-aa77-1360daa3d811"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PressEnter"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -109,6 +137,9 @@ public partial class @CursorControls: IInputActionCollection2, IDisposable
         // Touch
         m_Touch = asset.FindActionMap("Touch", throwIfNotFound: true);
         m_Touch_Press = m_Touch.FindAction("Press", throwIfNotFound: true);
+        // Keyboard
+        m_Keyboard = asset.FindActionMap("Keyboard", throwIfNotFound: true);
+        m_Keyboard_PressEnter = m_Keyboard.FindAction("PressEnter", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -266,6 +297,52 @@ public partial class @CursorControls: IInputActionCollection2, IDisposable
         }
     }
     public TouchActions @Touch => new TouchActions(this);
+
+    // Keyboard
+    private readonly InputActionMap m_Keyboard;
+    private List<IKeyboardActions> m_KeyboardActionsCallbackInterfaces = new List<IKeyboardActions>();
+    private readonly InputAction m_Keyboard_PressEnter;
+    public struct KeyboardActions
+    {
+        private @CursorControls m_Wrapper;
+        public KeyboardActions(@CursorControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @PressEnter => m_Wrapper.m_Keyboard_PressEnter;
+        public InputActionMap Get() { return m_Wrapper.m_Keyboard; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(KeyboardActions set) { return set.Get(); }
+        public void AddCallbacks(IKeyboardActions instance)
+        {
+            if (instance == null || m_Wrapper.m_KeyboardActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_KeyboardActionsCallbackInterfaces.Add(instance);
+            @PressEnter.started += instance.OnPressEnter;
+            @PressEnter.performed += instance.OnPressEnter;
+            @PressEnter.canceled += instance.OnPressEnter;
+        }
+
+        private void UnregisterCallbacks(IKeyboardActions instance)
+        {
+            @PressEnter.started -= instance.OnPressEnter;
+            @PressEnter.performed -= instance.OnPressEnter;
+            @PressEnter.canceled -= instance.OnPressEnter;
+        }
+
+        public void RemoveCallbacks(IKeyboardActions instance)
+        {
+            if (m_Wrapper.m_KeyboardActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IKeyboardActions instance)
+        {
+            foreach (var item in m_Wrapper.m_KeyboardActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_KeyboardActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public KeyboardActions @Keyboard => new KeyboardActions(this);
     public interface IMouseActions
     {
         void OnClick(InputAction.CallbackContext context);
@@ -274,5 +351,9 @@ public partial class @CursorControls: IInputActionCollection2, IDisposable
     public interface ITouchActions
     {
         void OnPress(InputAction.CallbackContext context);
+    }
+    public interface IKeyboardActions
+    {
+        void OnPressEnter(InputAction.CallbackContext context);
     }
 }
