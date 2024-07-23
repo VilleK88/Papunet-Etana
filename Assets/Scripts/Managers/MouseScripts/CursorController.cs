@@ -93,16 +93,24 @@ public class CursorController : MonoBehaviour
     }
     void HideHead()
     {
-        etana.GetComponent<Animator>().SetTrigger("HideHead");
-        SoundManager.Instance.PlaySound(whish);
-        hideHead = true;
-        StartCoroutine(ClickCounter());
+        bool ifDead = etana.GetComponent<Etana>().dead;
+        if (!ifDead)
+        {
+            etana.GetComponent<Animator>().SetTrigger("HideHead");
+            SoundManager.Instance.PlaySound(whish);
+            hideHead = true;
+            StartCoroutine(ClickCounter());
+        }
     }
     void StopHiding()
     {
-        etana.GetComponent<Animator>().SetTrigger("StopHiding");
-        hideHead = false;
-        StartCoroutine(ClickCounter());
+        bool ifDead = etana.GetComponent<Etana>().dead;
+        if(!ifDead)
+        {
+            etana.GetComponent<Animator>().SetTrigger("StopHiding");
+            hideHead = false;
+            StartCoroutine(ClickCounter());
+        }
     }
     IEnumerator ClickCounter()
     {
