@@ -86,7 +86,7 @@ public class InputManager : MonoBehaviour
     }
     public void SelectPlayAgainButton()
     {
-        playAgainButton.blackBG.SetActive(true);
+        playAgainButton.SetButton(playAgainButton.hoverSprite, playAgainButton.hoverSpriteWidth, playAgainButton.hoverSpriteHeight);
     }
     public void AgainButtonFunction()
     {

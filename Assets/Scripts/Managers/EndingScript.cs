@@ -18,12 +18,10 @@ public class EndingScript : MonoBehaviour
     public void GameOverScreen()
     {
         StartCoroutine(EndingScreen(false));
-        Debug.Log("GameOver");
     }
     public void GameWonScreen()
     {
         StartCoroutine(EndingScreen(true));
-        Debug.Log("GameWon");
     }
     IEnumerator EndingScreen(bool gameWon)
     {
