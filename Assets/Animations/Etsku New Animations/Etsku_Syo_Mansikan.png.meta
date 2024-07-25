@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6b7af8f9a8dae5643a237ed053c00976
+guid: 325559d9a7923764fa25979db656623b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -141,13 +141,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Etsku_Energiataso_1_0
+      name: animaatio_mansikka_suuhun_0
       rect:
         serializedVersion: 2
-        x: 18
-        y: 1274
-        width: 489
-        height: 393
+        x: 1
+        y: 1200
+        width: 486
+        height: 390
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,20 +155,104 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a196997af6ff33c45a3878b4ba873680
-      internalID: -945363801
+      spriteID: f1c1bcb04d6cb07409de0239b9b180e7
+      internalID: -1474307180
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Etsku_Energiataso_1_1
+      name: animaatio_mansikka_suuhun_1
       rect:
         serializedVersion: 2
-        x: 565
-        y: 1273
+        x: 492
+        y: 1200
+        width: 480
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e4831881e007564d8c1de49e81178c4
+      internalID: -977629465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animaatio_mansikka_suuhun_2
+      rect:
+        serializedVersion: 2
+        x: 983
+        y: 1200
+        width: 481
+        height: 397
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bc28ead6fe8cfb4bba3f39a78763927
+      internalID: -2061933223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animaatio_mansikka_suuhun_3
+      rect:
+        serializedVersion: 2
+        x: 1474
+        y: 1200
+        width: 482
+        height: 391
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4415ede7e888df14e81e1caab1dd0408
+      internalID: 2045708311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animaatio_mansikka_suuhun_4
+      rect:
+        serializedVersion: 2
+        x: 1965
+        y: 1200
+        width: 485
+        height: 391
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2c36f36d2f429c48baa4badd92da902
+      internalID: -1874415125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animaatio_mansikka_suuhun_5
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 800
         width: 490
-        height: 394
+        height: 391
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,20 +260,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f6e6ce8ec5d5ead46882d02c720e2aba
-      internalID: 691456086
+      spriteID: f85c3ee71cd549f44ab4a025615e29c9
+      internalID: 1105983152
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Etsku_Energiataso_1_2
+      name: animaatio_mansikka_suuhun_6
       rect:
         serializedVersion: 2
-        x: 1110
-        y: 1273
-        width: 492
-        height: 393
+        x: 492
+        y: 800
+        width: 490
+        height: 391
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,20 +281,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 093a72f7a1a6877448e7a85a3d605ec8
-      internalID: 1017797213
+      spriteID: 4554cda5f29329b4db382cab997a2560
+      internalID: -1630231373
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Etsku_Energiataso_1_3
+      name: animaatio_mansikka_suuhun_7
       rect:
         serializedVersion: 2
-        x: 1651
-        y: 1270
-        width: 502
-        height: 395
+        x: 983
+        y: 800
+        width: 490
+        height: 391
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,19 +302,124 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e652552e320db2444ac545e12250defd
-      internalID: -1268675917
+      spriteID: 8aa2f1b3ea199884b91a02a8e84ad032
+      internalID: -1572164097
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Etsku_Energiataso_1_4
+      name: animaatio_mansikka_suuhun_8
       rect:
         serializedVersion: 2
-        x: 2193
-        y: 1269
-        width: 515
+        x: 1474
+        y: 800
+        width: 490
+        height: 391
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38469b0479798a84dbdc54e57d940508
+      internalID: -1440833090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animaatio_mansikka_suuhun_9
+      rect:
+        serializedVersion: 2
+        x: 1965
+        y: 800
+        width: 490
+        height: 391
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb7c70af56089a74daec58687a62635b
+      internalID: -1107596481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animaatio_mansikka_suuhun_10
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 400
+        width: 490
+        height: 391
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4422642e9f92aa64787a19d23ad0d6e7
+      internalID: 637832181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animaatio_mansikka_suuhun_11
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 400
+        width: 485
+        height: 391
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7663e797da0af2468ea46207111f304
+      internalID: -441107103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animaatio_mansikka_suuhun_12
+      rect:
+        serializedVersion: 2
+        x: 983
+        y: 400
+        width: 482
+        height: 391
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ad2a27bf8b96044c85ac643f76cb5cd
+      internalID: -308938303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animaatio_mansikka_suuhun_13
+      rect:
+        serializedVersion: 2
+        x: 1474
+        y: 400
+        width: 481
         height: 397
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -239,20 +428,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a6df7d0631e09df438f2d218c7907f09
-      internalID: -508415270
+      spriteID: b5b3bcf8cc81868409d057db353dfcac
+      internalID: 1526219688
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Etsku_Energiataso_1_5
+      name: animaatio_mansikka_suuhun_14
       rect:
         serializedVersion: 2
-        x: 0
-        y: 846
-        width: 534
-        height: 404
+        x: 1965
+        y: 400
+        width: 480
+        height: 400
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -260,20 +449,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f39bf7f920e4394181f11b1729b1388
-      internalID: 345400403
+      spriteID: c2e0d83a5d951594298adb95d4908218
+      internalID: -1485773354
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Etsku_Energiataso_1_6
+      name: animaatio_mansikka_suuhun_15
       rect:
         serializedVersion: 2
-        x: 546
-        y: 838
-        width: 542
-        height: 415
+        x: 1
+        y: 0
+        width: 486
+        height: 390
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -281,281 +470,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 607c557782be00843a919ca6d23655e0
-      internalID: 1344131460
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Etsku_Energiataso_1_7
-      rect:
-        serializedVersion: 2
-        x: 1090
-        y: 837
-        width: 549
-        height: 409
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 49038a8f7b009d64c866726a5345dbe9
-      internalID: 2032609898
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Etsku_Energiataso_1_8
-      rect:
-        serializedVersion: 2
-        x: 1636
-        y: 837
-        width: 548
-        height: 409
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 89491caedcbfec044806381f3116f9b9
-      internalID: -1047993886
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Etsku_Energiataso_1_9
-      rect:
-        serializedVersion: 2
-        x: 2183
-        y: 833
-        width: 547
-        height: 410
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 50776ba21c555c2478371f30c25ab307
-      internalID: -1562297225
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Etsku_Energiataso_1_10
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 415
-        width: 547
-        height: 411
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0530c584bd0fcce468660ae40eab89f0
-      internalID: -693524779
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Etsku_Energiataso_1_11
-      rect:
-        serializedVersion: 2
-        x: 545
-        y: 419
-        width: 547
-        height: 411
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6f6981fb06963264ca99833d695bdc62
-      internalID: 815406004
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Etsku_Energiataso_1_12
-      rect:
-        serializedVersion: 2
-        x: 1090
-        y: 419
-        width: 549
-        height: 411
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 79c684f7bb8a8774487ecdb8bdf7609b
-      internalID: 664743199
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Etsku_Energiataso_1_13
-      rect:
-        serializedVersion: 2
-        x: 1638
-        y: 422
-        width: 542
-        height: 413
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5635d2cb1a97d204dbf788e905d6d20a
-      internalID: 2136486729
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Etsku_Energiataso_1_14
-      rect:
-        serializedVersion: 2
-        x: 2191
-        y: 418
-        width: 539
-        height: 415
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7d56331d6c58ec94bbc03fa6f374500e
-      internalID: -936721035
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Etsku_Energiataso_1_15
-      rect:
-        serializedVersion: 2
-        x: 10
-        y: 18
-        width: 514
-        height: 397
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e560c224564258a40a7fef39979b04a9
-      internalID: -254524734
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Etsku_Energiataso_1_16
-      rect:
-        serializedVersion: 2
-        x: 559
-        y: 19
-        width: 503
-        height: 395
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d0cc251c5fd6a824f992a9647360b51e
-      internalID: 2110510752
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Etsku_Energiataso_1_17
-      rect:
-        serializedVersion: 2
-        x: 1110
-        y: 22
-        width: 492
-        height: 393
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 56421c6ec62b3b4409f18a36aba574f0
-      internalID: 818313503
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Etsku_Energiataso_1_18
-      rect:
-        serializedVersion: 2
-        x: 1656
-        y: 22
-        width: 491
-        height: 395
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ddc75cdf9e6a2b242b278b7ff6025d07
-      internalID: 1404499285
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Etsku_Energiataso_1_19
-      rect:
-        serializedVersion: 2
-        x: 2203
-        y: 23
-        width: 489
-        height: 394
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 805bee5257e4ceb46844a7b95eb92d41
-      internalID: 231818262
+      spriteID: 97fd647c94b4e7247b57ee297aa39eba
+      internalID: 1845488104
       vertices: []
       indices: 
       edges: []
@@ -571,26 +487,22 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Etsku_Energiataso_1_0: -945363801
-      Etsku_Energiataso_1_1: 691456086
-      Etsku_Energiataso_1_10: -693524779
-      Etsku_Energiataso_1_11: 815406004
-      Etsku_Energiataso_1_12: 664743199
-      Etsku_Energiataso_1_13: 2136486729
-      Etsku_Energiataso_1_14: -936721035
-      Etsku_Energiataso_1_15: -254524734
-      Etsku_Energiataso_1_16: 2110510752
-      Etsku_Energiataso_1_17: 818313503
-      Etsku_Energiataso_1_18: 1404499285
-      Etsku_Energiataso_1_19: 231818262
-      Etsku_Energiataso_1_2: 1017797213
-      Etsku_Energiataso_1_3: -1268675917
-      Etsku_Energiataso_1_4: -508415270
-      Etsku_Energiataso_1_5: 345400403
-      Etsku_Energiataso_1_6: 1344131460
-      Etsku_Energiataso_1_7: 2032609898
-      Etsku_Energiataso_1_8: -1047993886
-      Etsku_Energiataso_1_9: -1562297225
+      animaatio_mansikka_suuhun_0: -1474307180
+      animaatio_mansikka_suuhun_1: -977629465
+      animaatio_mansikka_suuhun_10: 637832181
+      animaatio_mansikka_suuhun_11: -441107103
+      animaatio_mansikka_suuhun_12: -308938303
+      animaatio_mansikka_suuhun_13: 1526219688
+      animaatio_mansikka_suuhun_14: -1485773354
+      animaatio_mansikka_suuhun_15: 1845488104
+      animaatio_mansikka_suuhun_2: -2061933223
+      animaatio_mansikka_suuhun_3: 2045708311
+      animaatio_mansikka_suuhun_4: -1874415125
+      animaatio_mansikka_suuhun_5: 1105983152
+      animaatio_mansikka_suuhun_6: -1630231373
+      animaatio_mansikka_suuhun_7: -1572164097
+      animaatio_mansikka_suuhun_8: -1440833090
+      animaatio_mansikka_suuhun_9: -1107596481
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
