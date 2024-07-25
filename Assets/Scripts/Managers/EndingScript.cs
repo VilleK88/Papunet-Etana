@@ -41,6 +41,12 @@ public class EndingScript : MonoBehaviour
         InputManager.Instance.SelectFirstButton();
         InputManager.Instance.isEndingMenuOpen = true;
         transparentBG.SetActive(true);
+        StartCoroutine(SelectPlayAgainButton(0.2f));
+    }
+    IEnumerator SelectPlayAgainButton(float timer)
+    {
+        yield return new WaitForSeconds(timer);
+        InputManager.Instance.SelectPlayAgainButton();
     }
     void DestroyRocksAndStrawberries()
     {
