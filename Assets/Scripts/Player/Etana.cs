@@ -124,6 +124,11 @@ public class Etana : MonoBehaviour
         anim.SetBool("Dead", true);
         endingScript.GameOverScreen();
         spawnManager.GameOverOrWon();
+        StartCoroutine(TimeToDieDynamic(0.3f));
+    }
+    IEnumerator TimeToDieDynamic(float timer) // without this Etsku's body fill fly up the ground when getting hit by the rock
+    {
+        yield return new WaitForSeconds(timer);
         rb2d.bodyType = RigidbodyType2D.Dynamic;
     }
     public void GameWon()
