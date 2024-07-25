@@ -121,10 +121,10 @@ public class Etana : MonoBehaviour
     {
         dead = true;
         anim.SetTrigger("Die");
+        anim.SetBool("Dead", true);
         endingScript.GameOverScreen();
         spawnManager.GameOverOrWon();
         rb2d.bodyType = RigidbodyType2D.Dynamic;
-        anim.SetBool("Dead", true);
     }
     public void GameWon()
     {
