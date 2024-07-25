@@ -120,7 +120,8 @@ public class Etana : MonoBehaviour
     void Die()
     {
         dead = true;
-        anim.SetTrigger("Die");
+        if(!ifHiding)
+            anim.SetTrigger("Die");
         anim.SetBool("Dead", true);
         endingScript.GameOverScreen();
         spawnManager.GameOverOrWon();
