@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System.Runtime.InteropServices;
 public class InputManager : MonoBehaviour
 {
     #region Singleton
@@ -33,6 +34,7 @@ public class InputManager : MonoBehaviour
     [SerializeField] CloseGuideScreenButton closeGuideScreenButton;
     [SerializeField] ButtonB playAgainButton;
     public bool keyboardInput;
+    [DllImport("__Internal")] private static extern void CloseWindow();
     private void Start()
     {
         if (playButton != null)
@@ -94,7 +96,11 @@ public class InputManager : MonoBehaviour
     }
     public void QuitGame()
     {
+    #if UNITY_WEBGL && !UNITY_EDITOR
+    CloseWindow();
+    #else
         Application.Quit();
+    #endif
     }
     public void StartGame()
     {
