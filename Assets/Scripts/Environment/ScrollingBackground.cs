@@ -34,9 +34,7 @@ public class ScrollingBackground : MonoBehaviour
     }
     void RepeatWithAngle()
     {
-        Vector2 currentPos = transform.position;
-        float distance = Vector2.Distance(startPos, currentPos);
+        float distance = Vector2.Distance(startPos, transform.position);
         if (distance >= repeatWidth) transform.position = startPos;
-        else transform.position = currentPos + movementDirection * Time.deltaTime;
     }
 }
